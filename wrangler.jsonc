@@ -5,7 +5,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "muponda-heritage",
-"main": "@astrojs/cloudflare/entrypoints/server",
+	"main": "@astrojs/cloudflare/entrypoints/server",
 	"compatibility_date": "2026-01-28",
 	"compatibility_flags": [
 		"nodejs_compat",
@@ -17,7 +17,14 @@
 	},
 	"observability": {
 		"enabled": true
-	}
+	},
+	"kv_namespaces": [
+		{
+			"binding": "SESSION",
+			"id": "c6cd8b8112c24c18903d6fc8c3b16012",
+			"remote": true
+		}
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
