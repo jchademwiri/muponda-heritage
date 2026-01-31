@@ -20,11 +20,12 @@
 	},
 	"kv_namespaces": [
 		{
-			"binding": "SESSION",
-			"id": "c6cd8b8112c24c18903d6fc8c3b16012",
+			"binding": "muponda-heritage-session",
+			"id": "85f99242aeaa48caa737ccc9698f1fb2",
 			"remote": true
 		}
 	]
+	
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
