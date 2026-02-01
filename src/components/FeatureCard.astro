@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  icon: string;
+  theme: 'purple' | 'gold' | 'green';
+  delay?: string;
+}
+
+const { title, description, href, icon, theme, delay = '0ms' } = Astro.props;
+
+// Map theme to specific Tailwind classes
+const colors = {
+  purple: {
+    bg: 'bg-muponda-purple/10',
+    text: 'text-muponda-purple',
+    hoverBg: 'group-hover:bg-muponda-purple',
+    hoverText: 'group-hover:text-muponda-purple',
+  },
+  gold: {
+    bg: 'bg-muponda-gold/20',
+    text: 'text-yellow-700',
+    hoverBg: 'group-hover:bg-muponda-gold',
+    hoverText: 'group-hover:text-yellow-700',
+  },
+  green: {
+    bg: 'bg-muponda-green/10',
+    text: 'text-muponda-green',
+    hoverBg: 'group-hover:bg-muponda-green',
+    hoverText: 'group-hover:text-muponda-green',
+  },
+};
+
+const current = colors[theme];
+---
+
+<a
+  href={href}
+  class='group bg-card p-8 rounded-xl border border-border hover:shadow-lg transition flex flex-col items-start fade-in hover:-translate-y-1 duration-300'
+  style={`animation-delay: ${delay};`}
+>
+  <div
+    class={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-2xl transition ${current.bg} ${current.text} ${current.hoverBg} group-hover:text-white`}
+  >
+    <i class={`fas ${icon}`}></i>
+  </div>
+  <h3
+    class={`text-xl font-bold text-foreground mb-2 transition ${current.hoverText}`}
+  >
+    {title}
+  </h3>
+  <p class='text-muted-foreground'>{description}</p>
+</a>

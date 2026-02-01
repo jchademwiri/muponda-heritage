@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Muponda Dynasty Digital Heritage Platform" />
+    <title>Muponda Dynasty | Heritage Platform</title>
+
+    <!-- 1. Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+
+    <!-- 2. Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 3. Tailwind CSS (CDN for Preview Only) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'muponda-green': '#1b5e20',
+                        'muponda-gold': '#fdd835',
+                        'muponda-purple': '#7b1fa2',
+                        'muponda-earth': '#5d4037',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 4. Global Styles Shim -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .poem-text {
+            font-family: 'Merriweather', serif;
+        }
+
+        .hidden-page {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Simulating the slot behavior */
+        main {
+            min-height: 80vh;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Text Logo -->
+                    <div onclick="showPage('home')" class="flex-shrink-0 flex items-center gap-2 group cursor-pointer">
+                        <div
+                            class="h-10 w-10 bg-muponda-green rounded-full flex items-center justify-center text-white font-bold text-xl border-2 border-muponda-gold group-hover:bg-green-800 transition">
+                            M
+                        </div>
+                        <span class="font-bold text-xl text-gray-900 tracking-tight">Muponda Dynasty</span>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="showPage('home')"
+                        class="text-gray-600 hover:text-muponda-green font-medium transition">Home</button>
+                    <button onclick="showPage('culture')"
+                        class="text-gray-600 hover:text-muponda-green font-medium transition">Culture</button>
+                    <button onclick="showPage('history')"
+                        class="text-gray-600 hover:text-muponda-green font-medium transition">History</button>
+                    <button onclick="showPage('join')"
+                        class="px-4 py-2 rounded-full bg-muponda-green text-white hover:bg-green-800 transition shadow-sm font-semibold">
+                        Join Family Portal
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 pb-4 px-4 shadow-lg">
+            <button onclick="showPage('home')"
+                class="block py-3 w-full text-left text-gray-600 font-medium border-b border-gray-50">Home</button>
+            <button onclick="showPage('culture')"
+                class="block py-3 w-full text-left text-gray-600 font-medium border-b border-gray-50">Culture</button>
+            <button onclick="showPage('history')"
+                class="block py-3 w-full text-left text-gray-600 font-medium border-b border-gray-50">History</button>
+            <button onclick="showPage('join')" class="block py-3 w-full text-left text-muponda-green font-bold">Join
+                Portal</button>
+        </div>
+    </nav>
+
+    <!-- ================= MAIN CONTENT AREA ================= -->
+    <main class="flex-grow">
+
+        <!-- PAGE: HOME -->
+        <section id="page-home" class="fade-in">
+            <!-- Hero Section -->
+            <div class="relative bg-muponda-green overflow-hidden">
+                <div class="absolute inset-0">
+                    <img src="https://images.unsplash.com/photo-1547925725-70cb8d2c7001?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                        alt="Mountain Landscape" class="w-full h-full object-cover opacity-20">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-muponda-green via-muponda-green/90 to-transparent">
+                    </div>
+                </div>
+
+                <div
+                    class="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center sm:text-left sm:items-start">
+                    <h1
+                        class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl mb-6 font-serif">
+                        <span class="block">Preserving the Legacy of</span>
+                        <span class="block text-muponda-gold">The Muponda Dynasty</span>
+                    </h1>
+                    <p class="mt-4 max-w-2xl text-xl text-green-100">
+                        Connecting the descendants of the Serval Cat (Nyere). Honoring our ancestors, celebrating our
+                        culture, and building our future together.
+                    </p>
+                    <div class="mt-8 flex gap-4 flex-col sm:flex-row w-full sm:w-auto">
+                        <button onclick="showPage('join')"
+                            class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-muponda-green bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 shadow-lg text-center transition transform hover:-translate-y-0.5">
+                            Join the Family
+                        </button>
+                        <button onclick="showPage('culture')"
+                            class="px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 md:py-4 md:text-lg md:px-10 text-center transition">
+                            Read Praise Poem
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl font-serif">One Family, One
+                            Heritage</h2>
+                        <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Welcome to the official digital home of
+                            the Muponda clan.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- History Card -->
+                        <div onclick="showPage('history')"
+                            class="group bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition flex flex-col items-start cursor-pointer hover:-translate-y-1 duration-300">
+                            <div
+                                class="w-12 h-12 bg-muponda-purple/10 text-muponda-purple rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:bg-muponda-purple group-hover:text-white transition">
+                                <i class="fas fa-scroll"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-muponda-purple transition">
+                                Our History</h3>
+                            <p class="text-gray-600">Explore the origins from Tanganyika to the sacred mountains of
+                                Ruunji and Nyazongo.</p>
+                        </div>
+                        <!-- Totem Card -->
+                        <div onclick="showPage('totem')"
+                            class="group bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition flex flex-col items-start cursor-pointer hover:-translate-y-1 duration-300">
+                            <div
+                                class="w-12 h-12 bg-muponda-gold/20 text-yellow-700 rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:bg-muponda-gold group-hover:text-yellow-900 transition">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-700 transition">The
+                                Totem (Mutupo)</h3>
+                            <p class="text-gray-600">Learn about the Serval Cat (Nyere/Nzvidzi) - our symbol of vision,
+                                agility, and nobility.</p>
+                        </div>
+                        <!-- Directory Card -->
+                        <div onclick="showPage('join')"
+                            class="group bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition flex flex-col items-start cursor-pointer hover:-translate-y-1 duration-300">
+                            <div
+                                class="w-12 h-12 bg-muponda-green/10 text-muponda-green rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:bg-muponda-green group-hover:text-white transition">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-muponda-green transition">
+                                Family Directory</h3>
+                            <p class="text-gray-600">Connect with relatives, find family-owned businesses, and discover
+                                events.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action / Quote -->
+            <section class="bg-muponda-earth text-white py-16">
+                <div class="max-w-4xl mx-auto px-6 text-center">
+                    <i class="fas fa-quote-left text-4xl text-orange-200/30 mb-4 block"></i>
+                    <p class="text-2xl md:text-3xl font-serif italic font-light leading-relaxed">"Tikafira pano ngeyi?"
+                    </p>
+                    <p class="mt-4 text-orange-100 text-lg">[Is this goodness not the reason why we would rather die
+                        here?]</p>
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <p class="text-sm uppercase tracking-widest font-bold text-muponda-gold">From the Praise Poem
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE: CULTURE (HUB) -->
+        <section id="page-culture" class="hidden-page fade-in pb-20">
+            <div class="bg-muponda-earth py-16 text-center">
+                <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Detembo ReNyere</h1>
+                <p class="text-orange-100 text-lg">Culture, History & Sacred Heritage</p>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 -mt-8">
+                <!-- Poem Teaser -->
+                <div
+                    class="bg-white rounded-lg shadow-xl p-8 md:p-12 border-t-8 border-muponda-gold text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-2xl font-bold text-muponda-green mb-6 uppercase tracking-widest">The Praise Poem
+                        (Excerpt)</h2>
+                    <div class="poem-text text-lg md:text-xl leading-relaxed text-gray-800 mb-8 italic">
+                        "Mwaita Nyere! Mwaita Nzvidzi!<br>
+                        Mwaita Samaringa! Wari Nyazongo,<br>
+                        Mwazvita Mapara! Wangopara nhehwe dzichiota!"
+                    </div>
+                    <div class="text-sm text-gray-500 mb-8">[Well done Nyere! Well done Serval Cat! Thanks to the
+                        visionary ancestors...]</div>
+                    <button onclick="showPage('poem-full')"
+                        class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-muponda-earth hover:bg-orange-900 transition shadow-lg transform hover:-translate-y-1">
+                        <i class="fas fa-book-open mr-2"></i> Read Full Poem
+                    </button>
+                </div>
+                <!-- Sacred Geography -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Sacred Geography</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">The praise poem serves as a map of our heritage.
+                        These are the sacred landmarks and mountains that define the Muponda legacy.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Location 1 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-md border-b-4 border-muponda-purple hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-12 h-12 bg-purple-100 text-muponda-purple rounded-full flex items-center justify-center mb-4 text-xl">
+                            <i class="fas fa-cloud-moon"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Mt. Ruunji</h3>
+                        <p class="text-sm text-gray-500 font-semibold mb-2">"Gomo ringobuda mhute"</p>
+                        <p class="text-gray-600 text-sm">The sacred Mountain of Mist. The resting place of our Kings
+                            (Madzimambo). Only the strong can scale it.</p>
+                    </div>
+                    <!-- Location 2 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-md border-b-4 border-muponda-green hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-12 h-12 bg-green-100 text-muponda-green rounded-full flex items-center justify-center mb-4 text-xl">
+                            <i class="fas fa-monument"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Nyazongo</h3>
+                        <p class="text-sm text-gray-500 font-semibold mb-2">"Wari Nyazongo"</p>
+                        <p class="text-gray-600 text-sm">The spiritual home where the visionary ancestor
+                            <strong>Samaringa</strong> rests.
+                        </p>
+                    </div>
+                    <!-- Location 3 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-md border-b-4 border-muponda-gold hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center mb-4 text-xl">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Chikwira chaSaka</h3>
+                        <p class="text-sm text-gray-500 font-semibold mb-2">"The Hill Palace"</p>
+                        <p class="text-gray-600 text-sm">A place of immense respect. Tradition dictates it must be
+                            climbed while kneeling.</p>
+                    </div>
+                    <!-- Location 4 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-md border-b-4 border-muponda-earth hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-12 h-12 bg-orange-100 text-muponda-earth rounded-full flex items-center justify-center mb-4 text-xl">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Watsomba</h3>
+                        <p class="text-sm text-gray-500 font-semibold mb-2">"PaMutsamvu weWatsomba"</p>
+                        <p class="text-gray-600 text-sm">The site of the great Fig Tree (Mutsamvu) where remembrance
+                            ceremonies are held.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: FULL POEM -->
+        <section id="page-poem-full" class="hidden-page fade-in pb-20">
+            <div class="bg-muponda-green py-12 px-6 flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-4 md:mb-0 text-white">
+                    <h1 class="text-2xl md:text-3xl font-serif font-bold">Full Praise Poem</h1>
+                    <p class="text-green-200 text-sm">Detembo ReNyere</p>
+                </div>
+                <button onclick="showPage('culture')"
+                    class="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition border border-white/30 flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Culture
+                </button>
+            </div>
+            <div class="max-w-3xl mx-auto px-6 mt-8">
+                <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 border-l-8 border-muponda-gold">
+                    <div class="poem-text space-y-8 text-center md:text-left">
+                        <!-- Stanza 1 -->
+                        <div class="space-y-3">
+                            <h3
+                                class="font-bold text-muponda-green text-xl uppercase tracking-widest border-b pb-2 mb-4">
+                                Nzvidzi (Nzudzi), Nyere</h3>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Mwaita Nyere!
+                                </p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Well done Nyere]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Mwaita
+                                    Nzvidzi!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Well done Serval Cat]</p>
+                            </div>
+                        </div>
+                        <!-- Stanza 2 -->
+                        <div class="space-y-3 pt-4">
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Mwaita
+                                    Samaringa! Wari Nyazongo,</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Thanks to the visionary ancestors,
+                                    who are buried at Nyazonga]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Mwazvita
+                                    Mapara! Wangopara nhehwe dzichiota!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Thanks to our excellent Tanners!
+                                    Great tanners who tan Leather soft]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Titambire
+                                    Chikwira chaSaka:</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Great appreciation! The Hill
+                                    Palace of King Saka]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Chingokwirwa
+                                    ngewakapfugama, Mukamira mashora Dzimbahwe.</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[The Hill Residence only climbed on
+                                    your knees. Any other posture is a sign of disrespect for the King]</p>
+                            </div>
+                        </div>
+                        <!-- Stanza 3 (Mountains) -->
+                        <div
+                            class="space-y-3 pt-4 border-l-4 border-muponda-purple pl-4 md:pl-8 py-2 bg-gray-50 rounded-r-lg">
+                            <h4 class="text-xs font-sans font-bold text-gray-400 uppercase mb-2">The Sacred Mountains
+                            </h4>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Hekani wari
+                                    Rurunji! Gomo reMadzimambo.</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Greetings to those buried at Mt
+                                    Ruunji! The Mountain where our esteemed Kings are buried]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Gomo
+                                    ringokwirwa ngewakaguta!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[The challenging Mountain scaled
+                                    only by strong people]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wane mwena
+                                    wangogwesha</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[The weak can only crawl on their
+                                    bellies]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Gomo ringobuda
+                                    mhute!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[The sacred, mystical Mountain of
+                                    mist]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wari Rurunji
+                                    kudada, Wangomwa mweru!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Proud Ruunji people! Who only
+                                    drink the best beer/water/milk]</p>
+                            </div>
+                        </div>
+                        <!-- Stanza 4 (MuDowe) -->
+                        <div class="space-y-3 pt-4">
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wazvita hako
+                                    MuDowe wangu!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Well done, my dear MuDowe]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">MuDowe
+                                    ungowanikwa ngewatanga</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[For their goodness the Dowe are
+                                    betrothed to early birds]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Usina MuDowe
+                                    ungorira!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Without MuDowe livelihoods and
+                                    prosperity are never assured]</p>
+                            </div>
+                        </div>
+                        <!-- Stanza 5 (Revered Rulers) -->
+                        <div class="space-y-3 pt-4">
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Maita Kwerera
+                                    Samaringa wari Nyazongo</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Thank you our
+                                    ancestors/fore-bearers resting at Nyazongo]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Titambire wari
+                                    Zeramira! Titambire wari Hwahwazira:</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Welcome and great appreciation to
+                                    those interred at Zeramira! Thanks to Ancestors at Mt Hwahwazira]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Gomo
+                                    remadzishe. Tingotenda wari Manyika!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[The mountain where our revered
+                                    rulers rest. Thank you those in Manyika]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wari Chirowa
+                                    neChinyauzvare.</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[And those at Chirowa and
+                                    Chinyauzvare]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Zvaonekwa
+                                    Mambo Muponda!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Thank you, King Muponda]</p>
+                            </div>
+                        </div>
+                        <!-- Stanza 6 (King Character) -->
+                        <div class="space-y-3 pt-4 bg-yellow-50 p-4 rounded-lg">
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Zvaitwa
+                                    Dzimbahwe! Waridzi weHumambo!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Well done Your Majesty! The Royal
+                                    Family]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Murambatsvina!
+                                    Wangopa ngemwoyo wese!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Smart King of great generosity]
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Chigumbu
+                                    chisina unye!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[And for whom forgiveness is a
+                                    hallmark]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wangochemerwa
+                                    ngewatanga;</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[First-timers lament for a chance
+                                    to win you over]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">SaMuponda:
+                                    Nyere! Mapara!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Great King Muponda of the Serval
+                                    Cat Clan, acclaimed tanner]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Hekani Waridzi
+                                    weDoweguru!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Thanks to the revered Ruler Of
+                                    Doweguru]</p>
+                            </div>
+                        </div>
+                        <!-- Stanza 7: Origins & Tanganyika (ADDED) -->
+                        <div class="space-y-3 pt-4 border-l-4 border-muponda-earth pl-4 md:pl-8 py-2">
+                            <h4 class="text-xs font-sans font-bold text-gray-400 uppercase mb-2">The Origins</h4>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wangotonga
+                                    Manyika wari kuRwenze!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Who graciously presides over
+                                    Manyika from the Lofty Uplands]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wangotondera
+                                    Matongo wari paMutsamvu weWatsomba</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[For whom Remembrance Ceremonies
+                                    are done under a big Fig Tree at Watsomba]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Ndo'o pane
+                                    nhoroondo, asi Dzinde riri Tanganyika!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Where our remarkable history is
+                                    discussed, starting from our origins in Tanganyika / Ruvuma]</p>
+                            </div>
+                        </div>
+
+                        <!-- Stanza 8: Regional Clans (ADDED) -->
+                        <div class="space-y-3 pt-4">
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Ewo-o wari
+                                    Rupinda nekwa Mukandi,</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Welcome rulers at Rupinda and
+                                    Mukandi]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Wari Nhunhama,
+                                    Ruwaka neMagoboza.</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Those at Nhunhama, Ruwaka and
+                                    Magoboza]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Mwaita wari
+                                    Maringa, Maunga neNyanga,</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Thanks to those in Maringa, Maunga
+                                    and Nyanga]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Zvaonekwa wari
+                                    Chidazembe, nekwa Chigodora!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Those at Chidazembe and Chigodora]
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Stanza 9: Conclusion (ADDED) -->
+                        <div class="space-y-3 pt-4">
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Makayambuka
+                                    Nzizi Kasambavezi, Gorongoza neRwenya.</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[You crossed these big Rivers:
+                                    Zambezi; Gorongoza and Rwenya]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Zvaitwa Nyere!
+                                    Mwaita Samaringa!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Well done, visionary People of
+                                    repute]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Waridzi
+                                    wemasango, Wangoonekwa ngewatanga</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Whose mastery of stealth and
+                                    camouflage makes you invisible/invincible. And a mystery to many]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Mwaita; wari
+                                    Sambawarongo</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Thanks those buried near the
+                                    Queen's Pool]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Zvaonekwa
+                                    Dzimbahwe: SaMuponda!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Well done Your Majesty, King
+                                    Muponda]</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-lg md:text-xl font-semibold leading-relaxed">Nyere
+                                    yanguyi-iyi, Zvaitwa Mapara!</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[My precious Serval Cat, to this
+                                    Clan we proudly belong. Thank you Tanners!]</p>
+                            </div>
+                            <div class="pt-4">
+                                <p class="text-muponda-green text-xl md:text-2xl font-bold leading-relaxed">Tikafira
+                                    pano ngeyi?</p>
+                                <p class="text-gray-500 italic text-sm md:text-base">[Is this goodness not the reason
+                                    why we would rather die here?]</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-12 text-center border-t border-gray-100 pt-8">
+                        <button onclick="showPage('culture')"
+                            class="px-8 py-3 bg-muponda-green hover:bg-green-800 text-white rounded-full transition shadow-md">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Highlights
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: TOTEM -->
+        <section id="page-totem" class="hidden-page fade-in pb-20">
+            <div class="bg-muponda-gold py-16 text-center text-yellow-900">
+                <h1 class="text-3xl md:text-5xl font-serif font-bold mb-4">The Serval Cat</h1>
+                <p class="text-yellow-800 text-lg font-semibold">Mutupo: Nyere / Nzvidzi</p>
+            </div>
+            <div class="max-w-4xl mx-auto px-6 -mt-8">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 h-64 md:h-auto bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1555184857-e923e2714002?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Serval Cat" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Traits of the Nyere</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-muponda-green mt-1 mr-3"></i>
+                                    <div><span class="font-bold text-gray-900">Visionary (Samaringa)</span>
+                                        <p class="text-sm text-gray-600">The Serval sees what others miss in the tall
+                                            grass.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-muponda-green mt-1 mr-3"></i>
+                                    <div><span class="font-bold text-gray-900">Skilled Artisans (Mapara)</span>
+                                        <p class="text-sm text-gray-600">Masters of tanning leather ("Wangopara
+                                            nhehwe").</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Values Section -->
+                    <div class="bg-gray-50 p-8 border-t border-gray-100 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Family Values</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="p-4 bg-white rounded shadow-sm">
+                                <h4 class="font-bold text-muponda-green">Generosity</h4>
+                                <p class="text-xs text-gray-500 mt-2">"Wangopa ngemwoyo wese"</p>
+                            </div>
+                            <div class="p-4 bg-white rounded shadow-sm">
+                                <h4 class="font-bold text-muponda-green">Forgiveness</h4>
+                                <p class="text-xs text-gray-500 mt-2">"Chigumbu chisina unye"</p>
+                            </div>
+                            <div class="p-4 bg-white rounded shadow-sm">
+                                <h4 class="font-bold text-muponda-green">Excellence</h4>
+                                <p class="text-xs text-gray-500 mt-2">"Wangomwa mweru"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: HISTORY -->
+        <section id="page-history" class="hidden-page fade-in pb-20">
+            <div class="bg-muponda-purple py-16 text-center text-white">
+                <h1 class="text-3xl md:text-5xl font-serif font-bold mb-4">Nhoroondo Yedu</h1>
+                <p class="text-purple-200 text-lg">Our Historical Journey</p>
+            </div>
+            <div class="max-w-4xl mx-auto px-6 py-12">
+                <div class="border-l-4 border-muponda-purple ml-4 md:ml-0 space-y-12">
+                    <!-- Milestone 1 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div
+                            class="absolute -left-3 top-0 w-6 h-6 bg-muponda-purple rounded-full border-4 border-white">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Origins in Tanganyika</h3>
+                        <p class="text-gray-700 leading-relaxed mt-2">Our oral tradition confirms that the "Dzinde" (the
+                            root/origin) is in <strong>Tanganyika</strong> (modern-day Tanzania/Ruvuma region).</p>
+                    </div>
+                    <!-- Milestone 2 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-3 top-0 w-6 h-6 bg-muponda-green rounded-full border-4 border-white">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">The Great Migration</h3>
+                        <p class="text-gray-700 leading-relaxed mt-2">The ancestors traveled south, crossing the
+                            Kasambavezi (Zambezi), Gorongoza, and Rwenya rivers.</p>
+                    </div>
+                    <!-- Milestone 3 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-3 top-0 w-6 h-6 bg-muponda-gold rounded-full border-4 border-white">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Settlement in Manyika</h3>
+                        <p class="text-gray-700 leading-relaxed mt-2">The dynasty established itself in Manyika, with
+                            sacred sites at Ruunji and Nyazongo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: JOIN -->
+        <section id="page-join" class="hidden-page fade-in">
+            <div class="max-w-2xl mx-auto px-4 py-16">
+                <div class="text-center mb-10">
+                    <h1 class="text-3xl font-extrabold text-gray-900">Join the Family Portal</h1>
+                    <p class="mt-2 text-gray-600">Register to access the family tree and directory. Accounts are
+                        verified by the administration.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <form
+                        onsubmit="event.preventDefault(); alert('Thank you! This is a preview. In the real app, this sends data.');">
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div><label class="block text-sm font-medium text-gray-700 mb-1">First
+                                        Name</label><input type="text"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                                        placeholder="e.g., Jacob"></div>
+                                <div><label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label><input
+                                        type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                                        placeholder="e.g., Chademwiri"></div>
+                            </div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-1">Email</label><input
+                                    type="email" class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                                    placeholder="you@example.com"></div>
+                            <button type="submit"
+                                class="w-full py-3 px-4 bg-muponda-green hover:bg-green-800 text-white font-bold rounded-md shadow-md transition">Request
+                                Access</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-4">
+                <span class="text-2xl font-bold tracking-tight text-muponda-gold">Muponda Dynasty</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Mwaita Nyere. Mwaita Nzvidzi.</p>
+            <div class="border-t border-gray-800 pt-4">
+                <p class="text-xs text-gray-500">&copy; 2024 Muponda Dynasty Heritage Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Tab Switching Logic
+        function showPage(pageId) {
+            const pages = ['home', 'culture', 'join', 'poem-full', 'totem', 'history'];
+            pages.forEach(id => {
+                const el = document.getElementById('page-' + id);
+                if (el) el.classList.add('hidden-page');
+            });
+            const selected = document.getElementById('page-' + pageId);
+            if (selected) selected.classList.remove('hidden-page');
+            window.scrollTo(0, 0);
+
+            // Close mobile menu
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.add('hidden');
+        }
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+
+        // Init
+        showPage('home');
+    </script>
+</body>
+
+</html>

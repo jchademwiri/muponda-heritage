@@ -1,0 +1,59 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title='Join Family Portal'>
+  <div class='max-w-(--container-width) mx-auto px-4 py-16'>
+    <div class='text-center mb-10'>
+      <h1 class='text-3xl font-extrabold text-foreground'>
+        Join the Family Portal
+      </h1>
+      <p class='mt-2 text-muted-foreground'>
+        Register to access the family tree and directory. Accounts are verified
+        by the administration.
+      </p>
+    </div>
+    <div class='bg-card p-8 rounded-xl shadow-lg border border-border'>
+      <form
+        onsubmit="event.preventDefault(); alert('Thank you! This is a preview. In the real app, this sends data.');"
+      >
+        <div class='space-y-6'>
+          <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <div>
+              <label class='block text-sm font-medium text-foreground mb-1'
+                >First Name</label
+              ><input
+                type='text'
+                class='w-full px-4 py-2 border border-input rounded-md bg-background text-foreground'
+                placeholder='e.g., Jacob'
+              />
+            </div>
+            <div>
+              <label class='block text-sm font-medium text-foreground mb-1'
+                >Last Name</label
+              ><input
+                type='text'
+                class='w-full px-4 py-2 border border-input rounded-md bg-background text-foreground'
+                placeholder='e.g., Chademwiri'
+              />
+            </div>
+          </div>
+          <div>
+            <label class='block text-sm font-medium text-foreground mb-1'
+              >Email</label
+            ><input
+              type='email'
+              class='w-full px-4 py-2 border border-input rounded-md bg-background text-foreground'
+              placeholder='you@example.com'
+            />
+          </div>
+          <button
+            type='submit'
+            class='w-full py-3 px-4 bg-primary hover:opacity-90 text-primary-foreground font-bold rounded-md shadow-md transition'
+            >Request Access</button
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</Layout>

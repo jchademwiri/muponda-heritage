@@ -1,11 +1,114 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import FeatureCard from '@/components/FeatureCard.astro';
 ---
 
-<Layout>
-  <h1>Welcome to Muponda Heritage</h1>
-  <p>
-    Muponda Heritage is a website dedicated to preserving and promoting the
-    cultural heritage of the Muponda people.
-  </p>
+<Layout title='Home'>
+  <!-- Hero Section -->
+  <section class='relative bg-muponda-green overflow-hidden fade-in'>
+    <div class='absolute inset-0'>
+      <img
+        src='https://images.unsplash.com/photo-1547925725-70cb8d2c7001?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+        alt='Mountain Landscape'
+        class='w-full h-full object-cover opacity-20'
+      />
+      <div
+        class='absolute inset-0 bg-linear-to-r from-muponda-green via-muponda-green/90 to-transparent'
+      >
+      </div>
+    </div>
+
+    <div
+      class='relative max-w-(--container-width) mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center sm:text-left sm:items-start'
+    >
+      <h1
+        class='text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl mb-6 font-serif'
+      >
+        <span class='block'>Preserving the Legacy of</span>
+        <span class='block text-muponda-gold'>The Muponda Dynasty</span>
+      </h1>
+      <p class='mt-4 max-w-2xl text-xl text-green-100'>
+        Connecting the descendants of the Serval Cat (Nyere). Honoring our
+        ancestors, celebrating our culture, and building our future together.
+      </p>
+      <div class='mt-8 flex gap-4 flex-col sm:flex-row w-full sm:w-auto'>
+        <a
+          href='/join'
+          class='px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-background hover:bg-muted md:py-4 md:text-lg md:px-10 shadow-lg text-center transition transform hover:-translate-y-0.5'
+        >
+          Join the Family
+        </a>
+        <a
+          href='/culture'
+          class='px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 md:py-4 md:text-lg md:px-10 text-center transition'
+        >
+          Read Praise Poem
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class='py-16 bg-background'>
+    <div class='max-w-[var(--container-width)] mx-auto px-4 sm:px-6 lg:px-8'>
+      <div class='text-center mb-12 fade-in'>
+        <h2
+          class='text-3xl font-extrabold text-foreground sm:text-4xl font-serif'
+        >
+          One Family, One Heritage
+        </h2>
+        <p class='mt-4 max-w-2xl text-xl text-muted-foreground mx-auto'>
+          Welcome to the official digital home of the Muponda clan.
+        </p>
+      </div>
+
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <FeatureCard
+          title='Our History'
+          description='Explore the origins from Tanganyika to the sacred mountains of Ruunji and Nyazongo.'
+          icon='fa-scroll'
+          href='/history'
+          theme='purple'
+        />
+        <FeatureCard
+          title='The Totem (Mutupo)'
+          description='Learn about the Serval Cat (Nyere/Nzvidzi) - our symbol of vision, agility, and nobility.'
+          icon='fa-paw'
+          href='/totem'
+          theme='gold'
+          delay='100ms'
+        />
+        <FeatureCard
+          title='Family Directory'
+          description='Connect with relatives, find family-owned businesses, and discover events.'
+          icon='fa-users'
+          href='/join'
+          theme='green'
+          delay='200ms'
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class='bg-muponda-earth py-16 text-white'>
+    <div class='max-w-4xl mx-auto px-6 text-center'>
+      <i class='fas fa-quote-left text-4xl text-orange-200/30 mb-4 block'></i>
+      <p
+        class='text-2xl md:text-3xl font-serif italic font-light leading-relaxed'
+      >
+        "Tikafira pano ngeyi?"
+      </p>
+      <p class='mt-4 text-white/90 text-lg'>
+        [Is this goodness not the reason why we would rather die here?]
+      </p>
+      <div class='mt-8 pt-8 border-t border-white/10'>
+        <p
+          class='text-sm uppercase tracking-widest font-bold text-muponda-gold'
+        >
+          From the Praise Poem
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
