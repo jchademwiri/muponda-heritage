@@ -21,14 +21,14 @@ const {
 ---
 
 <div
-  class={`bg-white p-6 rounded-xl shadow-md border-b-4 hover:-translate-y-1 transition duration-300 ${borderColorClass}`}
+  class={`bg-card p-6 rounded-xl shadow-md border-b-4 hover:-translate-y-1 transition duration-300 ${borderColorClass}`}
 >
   <div
     class={`w-12 h-12 rounded-full flex items-center justify-center mb-4 text-xl ${iconBgClass} ${iconTextClass}`}
   >
     <i class={`fas ${icon}`}></i>
   </div>
-  <h3 class='text-xl font-bold text-gray-900 mb-2'>{name}</h3>
-  <p class='text-sm text-gray-500 font-semibold mb-2'>"{shonaName}"</p>
-  <p class='text-gray-600 text-sm'>{description}</p>
+  <h3 class='text-xl font-bold text-card-foreground mb-2'>{name}</h3>
+  <p class='text-sm text-muted-foreground font-semibold mb-2'>"{shonaName}"</p>
+  <p class='text-muted-foreground text-sm'>{description}</p>
 </div>

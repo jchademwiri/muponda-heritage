@@ -4,13 +4,13 @@ import Layout from '@/layouts/Layout.astro';
 
 <Layout title='Full Praise Poem'>
   <div
-    class='bg-muponda-green py-12 px-6 flex flex-col md:flex-row items-center justify-between'
+    class='bg-primary py-12 px-6 flex flex-col md:flex-row items-center justify-between text-primary-foreground'
   >
-    <div class='mb-4 md:mb-0 text-white'>
+    <div class='mb-4 md:mb-0'>
       <h1 class='text-2xl md:text-3xl font-serif font-bold'>
         Full Praise Poem
       </h1>
-      <p class='text-green-200 text-sm'>Detembo ReNyere</p>
+      <p class='text-primary-foreground/80 text-sm'>Detembo ReNyere</p>
     </div>
     <a
       href='/culture'
@@ -22,31 +22,31 @@ import Layout from '@/layouts/Layout.astro';
 
   <div class='max-w-3xl mx-auto px-6 mt-8 pb-20'>
     <div
-      class='bg-white rounded-lg shadow-xl p-8 md:p-12 border-l-8 border-muponda-gold'
+      class='bg-card rounded-lg shadow-xl p-8 md:p-12 border-l-8 border-secondary text-card-foreground'
     >
       <div class='poem-text space-y-8 text-center md:text-left'>
         <!-- Stanza 1 -->
         <div class='space-y-3'>
           <h3
-            class='font-bold text-muponda-green text-xl uppercase tracking-widest border-b pb-2 mb-4'
+            class='font-bold text-primary text-xl uppercase tracking-widest border-b border-border pb-2 mb-4'
           >
             Nzvidzi (Nzudzi), Nyere
           </h3>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Mwaita Nyere!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Well done Nyere]
             </p>
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Mwaita Nzvidzi!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Well done Serval Cat]
             </p>
           </div>
@@ -56,19 +56,19 @@ import Layout from '@/layouts/Layout.astro';
         <div class='space-y-3 pt-4'>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Mwaita Samaringa! Wari Nyazongo,
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Thanks to the visionary ancestors, who are buried at Nyazonga]
             </p>
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Mwazvita Mapara! Wangopara nhehwe dzichiota!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Thanks to our excellent Tanners! Great tanners who tan Leather
               soft]
             </p>
@@ -84,10 +84,10 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Chingokwirwa ngewakapfugama, Mukamira mashora Dzimbahwe.
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [The Hill Residence only climbed on your knees. Any other posture
               is a sign of disrespect for the King]
             </p>
@@ -96,17 +96,19 @@ import Layout from '@/layouts/Layout.astro';
 
         <!-- Stanza 3 (Mountains) -->
         <div
-          class='space-y-3 pt-4 border-l-4 border-muponda-purple pl-4 md:pl-8 py-2 bg-gray-50 rounded-r-lg'
+          class='space-y-3 pt-4 border-l-4 border-muponda-purple pl-4 md:pl-8 py-2 bg-muted/50 rounded-r-lg'
         >
-          <h4 class='text-xs font-sans font-bold text-gray-400 uppercase mb-2'>
+          <h4
+            class='text-xs font-sans font-bold text-muted-foreground uppercase mb-2'
+          >
             The Sacred Mountains
           </h4>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Hekani wari Rurunji! Gomo reMadzimambo.
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Greetings to those buried at Mt Ruunji! The Mountain where our
               esteemed Kings are buried]
             </p>
@@ -232,13 +234,13 @@ import Layout from '@/layouts/Layout.astro';
         </div>
 
         <!-- Stanza 6 (King Character) -->
-        <div class='space-y-3 pt-4 bg-yellow-50 p-4 rounded-lg'>
+        <div class='space-y-3 pt-4 bg-muted/30 p-4 rounded-lg'>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Zvaitwa Dzimbahwe! Waridzi weHumambo!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Well done Your Majesty! The Royal Family]
             </p>
           </div>
@@ -293,15 +295,17 @@ import Layout from '@/layouts/Layout.astro';
         <div
           class='space-y-3 pt-4 border-l-4 border-muponda-earth pl-4 md:pl-8 py-2'
         >
-          <h4 class='text-xs font-sans font-bold text-gray-400 uppercase mb-2'>
+          <h4
+            class='text-xs font-sans font-bold text-muted-foreground uppercase mb-2'
+          >
             The Origins
           </h4>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wangotonga Manyika wari kuRwenze!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Who graciously presides over Manyika from the Lofty Uplands]
             </p>
           </div>
@@ -427,19 +431,19 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div class='pt-4'>
             <p
-              class='text-muponda-green text-xl md:text-2xl font-bold leading-relaxed'
+              class='text-primary text-xl md:text-2xl font-bold leading-relaxed'
             >
               Tikafira pano ngeyi?
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Is this goodness not the reason why we would rather die here?]
             </p>
           </div>
         </div>
       </div>
-      <div class='mt-12 text-center border-t border-gray-100 pt-8'>
+      <div class='mt-12 text-center border-t border-border pt-8'>
         <a
           href='/culture'
-          class='px-8 py-3 bg-muponda-green hover:bg-green-800 text-white rounded-full transition shadow-md'
+          class='px-8 py-3 bg-primary hover:opacity-90 text-primary-foreground rounded-full transition shadow-md'
         >
           <i class='fas fa-arrow-left mr-2'></i> Back to Highlights
         </a>

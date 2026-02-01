@@ -37,7 +37,7 @@ const current = colors[theme];
 
 <a
   href={href}
-  class='group bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition flex flex-col items-start fade-in hover:-translate-y-1 duration-300'
+  class='group bg-card p-8 rounded-xl border border-border hover:shadow-lg transition flex flex-col items-start fade-in hover:-translate-y-1 duration-300'
   style={`animation-delay: ${delay};`}
 >
   <div
@@ -46,9 +46,9 @@ const current = colors[theme];
     <i class={`fas ${icon}`}></i>
   </div>
   <h3
-    class={`text-xl font-bold text-gray-900 mb-2 transition ${current.hoverText}`}
+    class={`text-xl font-bold text-foreground mb-2 transition ${current.hoverText}`}
   >
     {title}
   </h3>
-  <p class='text-gray-600'>{description}</p>
+  <p class='text-muted-foreground'>{description}</p>
 </a>

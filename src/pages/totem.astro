@@ -3,16 +3,20 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title='Totem'>
-  <div class='bg-muponda-gold py-16 text-center text-yellow-900'>
+  <div class='bg-secondary py-16 text-center text-secondary-foreground'>
     <h1 class='text-3xl md:text-5xl font-serif font-bold mb-4'>
       The Serval Cat
     </h1>
-    <p class='text-yellow-800 text-lg font-semibold'>Mutupo: Nyere / Nzvidzi</p>
+    <p class='text-secondary-foreground/80 text-lg font-semibold'>
+      Mutupo: Nyere / Nzvidzi
+    </p>
   </div>
   <div class='max-w-4xl mx-auto px-6 -mt-8 pb-20'>
-    <div class='bg-white rounded-lg shadow-xl overflow-hidden'>
+    <div
+      class='bg-card rounded-lg shadow-xl overflow-hidden text-card-foreground'
+    >
       <div class='md:flex'>
-        <div class='md:w-1/2 h-64 md:h-auto bg-gray-200 relative'>
+        <div class='md:w-1/2 h-64 md:h-auto bg-muted relative'>
           <img
             src='https://images.unsplash.com/photo-1555184857-e923e2714002?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
             alt='Serval Cat'
@@ -20,26 +24,26 @@ import Layout from '@/layouts/Layout.astro';
           />
         </div>
         <div class='p-8 md:w-1/2 flex flex-col justify-center'>
-          <h3 class='text-2xl font-bold text-gray-900 mb-4'>
+          <h3 class='text-2xl font-bold text-foreground mb-4'>
             Traits of the Nyere
           </h3>
           <ul class='space-y-4'>
             <li class='flex items-start'>
-              <i class='fas fa-check-circle text-muponda-green mt-1 mr-3'></i>
+              <i class='fas fa-check-circle text-primary mt-1 mr-3'></i>
               <div>
-                <span class='font-bold text-gray-900'
+                <span class='font-bold text-foreground'
                   >Visionary (Samaringa)</span
-                ><p class='text-sm text-gray-600'>
+                ><p class='text-sm text-muted-foreground'>
                   The Serval sees what others miss in the tall grass.
                 </p>
               </div>
             </li>
             <li class='flex items-start'>
-              <i class='fas fa-check-circle text-muponda-green mt-1 mr-3'></i>
+              <i class='fas fa-check-circle text-primary mt-1 mr-3'></i>
               <div>
-                <span class='font-bold text-gray-900'
+                <span class='font-bold text-foreground'
                   >Skilled Artisans (Mapara)</span
-                ><p class='text-sm text-gray-600'>
+                ><p class='text-sm text-muted-foreground'>
                   Masters of tanning leather ("Wangopara nhehwe").
                 </p>
               </div>
@@ -48,26 +52,26 @@ import Layout from '@/layouts/Layout.astro';
         </div>
       </div>
       <!-- Values Section -->
-      <div class='bg-gray-50 p-8 border-t border-gray-100 text-center'>
-        <h3 class='text-xl font-bold text-gray-900 mb-6'>Family Values</h3>
+      <div class='bg-muted/50 p-8 border-t border-border text-center'>
+        <h3 class='text-xl font-bold text-foreground mb-6'>Family Values</h3>
         <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
-          <div class='p-4 bg-white rounded shadow-sm'>
-            <h4 class='font-bold text-muponda-green'>Generosity</h4><p
-              class='text-xs text-gray-500 mt-2'
+          <div class='p-4 bg-card rounded shadow-sm border border-border'>
+            <h4 class='font-bold text-primary'>Generosity</h4><p
+              class='text-xs text-muted-foreground mt-2'
             >
               "Wangopa ngemwoyo wese"
             </p>
           </div>
-          <div class='p-4 bg-white rounded shadow-sm'>
-            <h4 class='font-bold text-muponda-green'>Forgiveness</h4><p
-              class='text-xs text-gray-500 mt-2'
+          <div class='p-4 bg-card rounded shadow-sm border border-border'>
+            <h4 class='font-bold text-primary'>Forgiveness</h4><p
+              class='text-xs text-muted-foreground mt-2'
             >
               "Chigumbu chisina unye"
             </p>
           </div>
-          <div class='p-4 bg-white rounded shadow-sm'>
-            <h4 class='font-bold text-muponda-green'>Excellence</h4><p
-              class='text-xs text-gray-500 mt-2'
+          <div class='p-4 bg-card rounded shadow-sm border border-border'>
+            <h4 class='font-bold text-primary'>Excellence</h4><p
+              class='text-xs text-muted-foreground mt-2'
             >
               "Wangomwa mweru"
             </p>

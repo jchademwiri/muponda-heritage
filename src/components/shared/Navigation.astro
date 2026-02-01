@@ -7,21 +7,22 @@ const links = [
   { href: '/culture', label: 'Culture' },
   { href: '/history', label: 'History' },
   { href: '/totem', label: 'Totem' },
+  { href: '/poem', label: 'Poem' },
 ];
 ---
 
-<nav class='bg-white shadow-md sticky top-0 z-50'>
+<nav class='bg-card border-b border-border shadow-md sticky top-0 z-50'>
   <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
     <div class='flex justify-between h-16'>
       <div class='flex items-center'>
         <!-- Logo -->
-        <a href='/' class='flex-shrink-0 flex items-center gap-2 group'>
+        <a href='/' class='shrink-0 flex items-center gap-2 group'>
           <div
             class='h-10 w-10 bg-muponda-green rounded-full flex items-center justify-center text-white font-bold text-xl border-2 border-muponda-gold group-hover:bg-green-800 transition'
           >
             M
           </div>
-          <span class='font-bold text-xl text-gray-900 tracking-tight'
+          <span class='font-bold text-xl text-foreground tracking-tight'
             >Muponda Dynasty</span
           >
         </a>
@@ -36,8 +37,8 @@ const links = [
               class:list={[
                 'font-medium transition',
                 currentPath === link.href
-                  ? 'text-muponda-green font-bold'
-                  : 'text-gray-600 hover:text-muponda-green',
+                  ? 'text-primary font-bold'
+                  : 'text-muted-foreground hover:text-primary',
               ]}
             >
               {link.label}
@@ -46,17 +47,27 @@ const links = [
         }
         <a
           href='/join'
-          class='px-4 py-2 rounded-full bg-muponda-green text-white hover:bg-green-800 transition shadow-sm font-semibold'
+          class='px-4 py-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition shadow-sm font-semibold'
         >
           Join Family Portal
         </a>
       </div>
 
+      <!-- Theme Toggle -->
+      <button
+        id='theme-toggle'
+        class='p-2 rounded-full hover:bg-muted text-muted-foreground transition'
+        aria-label='Toggle Theme'
+      >
+        <i class='fas fa-sun dark:hidden'></i>
+        <i class='fas fa-moon hidden dark:block'></i>
+      </button>
+
       <!-- Mobile Menu Button -->
       <div class='flex items-center md:hidden'>
         <button
           id='mobile-menu-btn'
-          class='text-gray-600 hover:text-gray-900 focus:outline-none'
+          class='text-muted-foreground hover:text-foreground focus:outline-none'
         >
           <i class='fas fa-bars text-2xl'></i>
         </button>
@@ -67,21 +78,19 @@ const links = [
   <!-- Mobile Menu -->
   <div
     id='mobile-menu'
-    class='hidden md:hidden bg-white border-t border-gray-100 pb-4 px-4 shadow-lg'
+    class='hidden md:hidden bg-card border-t border-border pb-4 px-4 shadow-lg'
   >
     {
       links.map((link) => (
         <a
           href={link.href}
-          class='block py-3 w-full text-left text-gray-600 font-medium border-b border-gray-50 hover:text-muponda-green'
+          class='block py-3 w-full text-left text-muted-foreground font-medium border-b border-border hover:text-primary'
         >
           {link.label}
         </a>
       ))
     }
-    <a
-      href='/join'
-      class='block py-3 w-full text-left text-muponda-green font-bold'
+    <a href='/join' class='block py-3 w-full text-left text-primary font-bold'
       >Join Portal</a
     >
   </div>
@@ -93,5 +102,10 @@ const links = [
 
   btn?.addEventListener('click', () => {
     menu?.classList.toggle('hidden');
+  });
+
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
   });
 </script>
