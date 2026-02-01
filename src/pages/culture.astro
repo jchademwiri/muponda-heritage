@@ -1,0 +1,91 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import SacredPlaceCard from '@/components/SacredPlaceCard.astro';
+---
+
+<Layout title='Culture'>
+  <div class='bg-muponda-earth py-16 text-center'>
+    <h1 class='text-3xl md:text-5xl font-serif font-bold text-white mb-4'>
+      Detembo ReNyere
+    </h1>
+    <p class='text-orange-100 text-lg'>Culture, History & Sacred Heritage</p>
+  </div>
+
+  <div class='max-w-7xl mx-auto px-6 -mt-8 pb-20'>
+    <!-- Poem Teaser -->
+    <div
+      class='bg-white rounded-lg shadow-xl p-8 md:p-12 border-t-8 border-muponda-gold text-center max-w-4xl mx-auto mb-16'
+    >
+      <h2
+        class='text-2xl font-bold text-muponda-green mb-6 uppercase tracking-widest'
+      >
+        The Praise Poem (Excerpt)
+      </h2>
+      <div
+        class='poem-text text-lg md:text-xl leading-relaxed text-gray-800 mb-8 italic'
+      >
+        "Mwaita Nyere! Mwaita Nzvidzi!<br />
+        Mwaita Samaringa! Wari Nyazongo,<br />
+        Mwazvita Mapara! Wangopara nhehwe dzichiota!"
+      </div>
+      <div class='text-sm text-gray-500 mb-8'>
+        [Well done Nyere! Well done Serval Cat! Thanks to the visionary
+        ancestors...]
+      </div>
+      <a
+        href='/poem'
+        class='inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-muponda-earth hover:bg-orange-900 transition shadow-lg transform hover:-translate-y-1'
+      >
+        <i class='fas fa-book-open mr-2'></i> Read Full Poem
+      </a>
+    </div>
+
+    <!-- Sacred Geography -->
+    <div class='text-center mb-12'>
+      <h2 class='text-3xl font-bold text-gray-900'>Sacred Geography</h2>
+      <p class='mt-4 text-gray-600 max-w-2xl mx-auto'>
+        The praise poem serves as a map of our heritage. These are the sacred
+        landmarks and mountains that define the Muponda legacy.
+      </p>
+    </div>
+
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+      <SacredPlaceCard
+        name='Mt. Ruunji'
+        shonaName='Gomo ringobuda mhute'
+        description='The sacred Mountain of Mist. The resting place of our Kings (Madzimambo). Only the strong can scale it.'
+        icon='fa-cloud-moon'
+        borderColorClass='border-muponda-purple'
+        iconBgClass='bg-purple-100'
+        iconTextClass='text-muponda-purple'
+      />
+      <SacredPlaceCard
+        name='Nyazongo'
+        shonaName='Wari Nyazongo'
+        description='The spiritual home where the visionary ancestor Samaringa rests.'
+        icon='fa-monument'
+        borderColorClass='border-muponda-green'
+        iconBgClass='bg-green-100'
+        iconTextClass='text-muponda-green'
+      />
+      <SacredPlaceCard
+        name='Chikwira chaSaka'
+        shonaName='The Hill Palace'
+        description='A place of immense respect. Tradition dictates it must be climbed while kneeling.'
+        icon='fa-crown'
+        borderColorClass='border-muponda-gold'
+        iconBgClass='bg-yellow-100'
+        iconTextClass='text-yellow-700'
+      />
+      <SacredPlaceCard
+        name='Watsomba'
+        shonaName='PaMutsamvu weWatsomba'
+        description='The site of the great Fig Tree (Mutsamvu) where remembrance ceremonies are held.'
+        icon='fa-tree'
+        borderColorClass='border-muponda-earth'
+        iconBgClass='bg-orange-100'
+        iconTextClass='text-muponda-earth'
+      />
+    </div>
+  </div>
+</Layout>
