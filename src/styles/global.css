@@ -6,6 +6,10 @@
     --color-muponda-purple: #4A148C;
     --color-muponda-earth: #A0522D;
 
+    /* Layout */
+    --container-width: 80rem;
+    /* 1280px */
+
     /* Semantic Colors */
     --color-background: var(--background);
     --color-foreground: var(--foreground);

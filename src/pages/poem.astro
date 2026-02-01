@@ -3,24 +3,26 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title='Full Praise Poem'>
-  <div
-    class='bg-primary py-12 px-6 flex flex-col md:flex-row items-center justify-between text-primary-foreground'
-  >
-    <div class='mb-4 md:mb-0'>
-      <h1 class='text-2xl md:text-3xl font-serif font-bold'>
-        Full Praise Poem
-      </h1>
-      <p class='text-primary-foreground/80 text-sm'>Detembo ReNyere</p>
-    </div>
-    <a
-      href='/culture'
-      class='px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition border border-white/30 flex items-center'
+  <div class='bg-primary py-12 text-primary-foreground'>
+    <div
+      class='max-w-[var(--container-width)] mx-auto px-6 flex flex-col md:flex-row items-center justify-between'
     >
-      <i class='fas fa-arrow-left mr-2'></i> Back to Culture
-    </a>
+      <div class='mb-4 md:mb-0'>
+        <h1 class='text-2xl md:text-3xl font-serif font-bold'>
+          Full Praise Poem
+        </h1>
+        <p class='text-primary-foreground/80 text-sm'>Detembo ReNyere</p>
+      </div>
+      <a
+        href='/culture'
+        class='px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition border border-white/30 flex items-center'
+      >
+        <i class='fas fa-arrow-left mr-2'></i> Back to Culture
+      </a>
+    </div>
   </div>
 
-  <div class='max-w-3xl mx-auto px-6 mt-8 pb-20'>
+  <div class='max-w-[var(--container-width)] mx-auto px-6 mt-8 pb-20'>
     <div
       class='bg-card rounded-lg shadow-xl p-8 md:p-12 border-l-8 border-secondary text-card-foreground'
     >
@@ -75,10 +77,10 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Titambire Chikwira chaSaka:
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
+            </p><p class='text-muted-foreground italic text-sm md:text-base'>
               [Great appreciation! The Hill Palace of King Saka]
             </p>
           </div>
@@ -115,7 +117,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Gomo ringokwirwa ngewakaguta!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -124,7 +126,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wane mwena wangogwesha
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -133,7 +135,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Gomo ringobuda mhute!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -142,7 +144,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wari Rurunji kudada, Wangomwa mweru!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -155,7 +157,7 @@ import Layout from '@/layouts/Layout.astro';
         <div class='space-y-3 pt-4'>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wazvita hako MuDowe wangu!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -164,7 +166,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               MuDowe ungowanikwa ngewatanga
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -173,7 +175,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Usina MuDowe ungorira!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -186,7 +188,7 @@ import Layout from '@/layouts/Layout.astro';
         <div class='space-y-3 pt-4'>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Maita Kwerera Samaringa wari Nyazongo
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -195,7 +197,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Titambire wari Zeramira! Titambire wari Hwahwazira:
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -205,7 +207,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Gomo remadzishe. Tingotenda wari Manyika!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -215,7 +217,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wari Chirowa neChinyauzvare.
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -224,7 +226,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Zvaonekwa Mambo Muponda!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -246,7 +248,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Murambatsvina! Wangopa ngemwoyo wese!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -255,7 +257,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Chigumbu chisina unye!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -264,7 +266,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wangochemerwa ngewatanga;
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -273,7 +275,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               SaMuponda: Nyere! Mapara!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -282,7 +284,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Hekani Waridzi weDoweguru!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -311,7 +313,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wangotondera Matongo wari paMutsamvu weWatsomba
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -321,7 +323,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Ndo'o pane nhoroondo, asi Dzinde riri Tanganyika!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -335,7 +337,7 @@ import Layout from '@/layouts/Layout.astro';
         <div class='space-y-3 pt-4'>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Ewo-o wari Rupinda nekwa Mukandi,
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -344,7 +346,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Wari Nhunhama, Ruwaka neMagoboza.
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -353,7 +355,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Mwaita wari Maringa, Maunga neNyanga,
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -362,7 +364,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Zvaonekwa wari Chidazembe, nekwa Chigodora!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -375,7 +377,7 @@ import Layout from '@/layouts/Layout.astro';
         <div class='space-y-3 pt-4'>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Makayambuka Nzizi Kasambavezi, Gorongoza neRwenya.
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -384,7 +386,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Zvaitwa Nyere! Mwaita Samaringa!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -393,7 +395,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Waridzi wemasango, Wangoonekwa ngewatanga
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -403,7 +405,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Mwaita; wari Sambawarongo
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -412,7 +414,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Zvaonekwa Dzimbahwe: SaMuponda!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
@@ -421,7 +423,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <div>
             <p
-              class='text-gray-900 text-lg md:text-xl font-semibold leading-relaxed'
+              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
             >
               Nyere yanguyi-iyi, Zvaitwa Mapara!
             </p><p class='text-gray-500 italic text-sm md:text-base'>
