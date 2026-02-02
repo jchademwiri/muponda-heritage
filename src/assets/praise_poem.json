@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "title": "Detembo ReNyere",
+    "totem": "Nyere / Nzvidzi",
+    "clan": "Muponda Dynasty",
+    "author": "Mponda Family Council",
+    "developer": "Jacob Chademwiri",
+    "version": "1.0",
+    "date_created": "2024-06-15",
+    "last_updated": "2024-06-15",
+    "audio_url": "https://assets.muponda.com/audio/praise-poem-recital.mp3"
+  },
+  "stanzas": [
+    {
+      "id": 1,
+      "title": "Introduction",
+      "lines": [
+        {
+          "shona": "Mwaita Nyere!",
+          "english": "Well done Nyere!"
+        },
+        {
+          "shona": "Mwaita Nzvidzi!",
+          "english": "Well done Serval Cat!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The Visionary Ancestors",
+      "lines": [
+        {
+          "shona": "Mwaita Samaringa!",
+          "english": "Thanks to the visionary ancestors",
+          "footnote_ref": "samaringa"
+        },
+        {
+          "shona": "Wari Nyazongo,",
+          "english": "Who are buried at Nyazonga",
+          "footnote_ref": "nyazongo"
+        },
+        {
+          "shona": "Mwazvita Mapara!",
+          "english": "Thanks to our excellent Tanners",
+          "footnote_ref": "mapara"
+        },
+        {
+          "shona": "Wangopara nhehwe dzichiota!",
+          "english": "Great tanners who tan Leather soft"
+        },
+        {
+          "shona": "Titambire Chikwira chaSaka:",
+          "english": "Great appreciation! The Hill Palace of King Saka",
+          "footnote_ref": "saka"
+        },
+        {
+          "shona": "Chingokwirwa ngewakapfugama,",
+          "english": "The Hill Residence only climbed on your knees"
+        },
+        {
+          "shona": "Mukamira mashora Dzimbahwe.",
+          "english": "Any other posture is a sign of disrespect for the King",
+          "footnote_ref": "dzimbahwe"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Sacred Mountain Ruunji",
+      "lines": [
+        {
+          "shona": "Hekani wari Rurunji!",
+          "english": "Greetings to those buried at Mt Ruunji",
+          "footnote_ref": "ruunji"
+        },
+        {
+          "shona": "Gomo reMadzimambo.",
+          "english": "The Mountain where our esteemed Kings are buried"
+        },
+        {
+          "shona": "Gomo ringokwirwa ngewakaguta!",
+          "english": "The challenging Mountain scaled only by strong people"
+        },
+        {
+          "shona": "Wane mwena wangogwesha",
+          "english": "The weak can only crawl on their bellies"
+        },
+        {
+          "shona": "Gomo ringobuda mhute!",
+          "english": "The sacred, mystical Mountain of mist"
+        },
+        {
+          "shona": "Wari Rurunji kudada,",
+          "english": "Proud Ruunji people"
+        },
+        {
+          "shona": "Wangomwa mweru!",
+          "english": "Who only drink the best beer/water/milk"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Provider (MuDowe)",
+      "lines": [
+        {
+          "shona": "Wazvita hako MuDowe wangu!",
+          "english": "Well done, my dear MuDowe",
+          "footnote_ref": "mudowe"
+        },
+        {
+          "shona": "MuDowe ungowanikwa ngewatanga",
+          "english": "For their goodness the Dowe are betrothed to early birds"
+        },
+        {
+          "shona": "Usina MuDowe ungorira!",
+          "english": "Without MuDowe livelihoods and prosperity are never assured"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Revered Rulers & Locations",
+      "lines": [
+        {
+          "shona": "Maita Kwerera Samaringa wari Nyazongo",
+          "english": "Thank you our ancestors/fore-bearers resting at Nyazongo"
+        },
+        {
+          "shona": "Titambire wari Zeramira!",
+          "english": "Welcome and great appreciation to those interred at Zeramira"
+        },
+        {
+          "shona": "Titambire wari Hwahwazira:",
+          "english": "Thanks to Ancestors at Mt Hwahwazira"
+        },
+        {
+          "shona": "Gomo remadzishe",
+          "english": "The mountain where our revered rulers rest"
+        },
+        {
+          "shona": "Tingotenda wari Manyika!",
+          "english": "Thank you those in Manyika",
+          "footnote_ref": "manyika"
+        },
+        {
+          "shona": "Wari Chirowa neChinyauzvare.",
+          "english": "And those at Chirowa and Chinyauzvare"
+        },
+        {
+          "shona": "Zvaonekwa Mambo Muponda!",
+          "english": "Thank you, King Muponda",
+          "footnote_ref": "muponda"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The Character of the King",
+      "lines": [
+        {
+          "shona": "Zvaitwa Dzimbahwe! Waridzi weHumambo!",
+          "english": "Well done Your Majesty! The Royal Family"
+        },
+        {
+          "shona": "Murambatsvina! Wangopa ngemwoyo wese!",
+          "english": "Smart King of great generosity"
+        },
+        {
+          "shona": "Chigumbu chisina unye!",
+          "english": "And for whom forgiveness is a hallmark"
+        },
+        {
+          "shona": "Wangochemerwa ngewatanga;",
+          "english": "First-timers lament for a chance to win you over"
+        },
+        {
+          "shona": "SaMuponda: Nyere! Mapara!",
+          "english": "Great King Muponda of the Serval Cat Clan, acclaimed tanner"
+        },
+        {
+          "shona": "Hekani Waridzi weDoweguru!",
+          "english": "Thanks to the revered Ruler Of Doweguru"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Origins & History",
+      "lines": [
+        {
+          "shona": "Wangotonga Manyika wari kuRwenze!",
+          "english": "Who graciously presides over Manyika from the Lofty Uplands"
+        },
+        {
+          "shona": "Wangotondera Matongo wari paMutsamvu weWatsomba",
+          "english": "For whom Remembrance Ceremonies are done under a big Fig Tree at Watsomba",
+          "footnote_ref": "watsomba"
+        },
+        {
+          "shona": "Ndo'o pane nhoroondo, asi Dzinde riri Tanganyika!",
+          "english": "Where our remarkable history is discussed, starting from our origins in Tanganyika / Ruvuma",
+          "footnote_ref": "tanganyika"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Regional Clans",
+      "lines": [
+        {
+          "shona": "Ewo-o wari Rupinda nekwa Mukandi,",
+          "english": "Welcome rulers at Rupinda and Mukandi"
+        },
+        {
+          "shona": "Wari Nhunhama, Ruwaka neMagoboza.",
+          "english": "Those at Nhunhama, Ruwaka and Magoboza"
+        },
+        {
+          "shona": "Mwaita wari Maringa, Maunga neNyanga,",
+          "english": "Thanks to those in Maringa, Maunga and Nyanga"
+        },
+        {
+          "shona": "Zvaonekwa wari Chidazembe, nekwa Chigodora!",
+          "english": "Those at Chidazembe and Chigodora"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Conclusion",
+      "lines": [
+        {
+          "shona": "Makayambuka Nzizi Kasambavezi, Gorongoza neRwenya.",
+          "english": "You crossed these big Rivers: Zambezi; Gorongoza and Rwenya",
+          "footnote_ref": "rivers"
+        },
+        {
+          "shona": "Zvaitwa Nyere! Mwaita Samaringa!",
+          "english": "Well done, visionary People of repute"
+        },
+        {
+          "shona": "Waridzi wemasango,",
+          "english": "Whose mastery of stealth and camouflage makes you invisible/invincible"
+        },
+        {
+          "shona": "Wangoonekwa ngewatanga",
+          "english": "And a mystery to many"
+        },
+        {
+          "shona": "Mwaita; wari Sambawarongo",
+          "english": "Thanks those buried near the Queen's Pool"
+        },
+        {
+          "shona": "Zvaonekwa Dzimbahwe: SaMuponda!",
+          "english": "Well done Your Majesty, King Muponda"
+        },
+        {
+          "shona": "Nyere yanguyi-iyi",
+          "english": "My precious Serval Cat, to this Clan we proudly belong"
+        },
+        {
+          "shona": "Zvaitwa Mapara! Nyere, Samaringa!",
+          "english": "Thank you Tanners! Nyere, Samaringa!"
+        },
+        {
+          "shona": "Tikafira pano ngeyi?",
+          "english": "Is this goodness not the reason why we would rather die here?"
+        }
+      ]
+    }
+  ],
+  "footnotes": {
+    "samaringa": {
+      "term": "Samaringa",
+      "definition": "A visionary ancestor mentioned as a fore-bearer resting at Nyazongo. Often associated with foresight."
+    },
+    "nyazongo": {
+      "term": "Nyazongo",
+      "definition": "A sacred mountain and resting place for ancestors. A central spiritual site for the dynasty."
+    },
+    "mapara": {
+      "term": "Mapara",
+      "definition": "Refers to the clan's historical expertise as excellent Tanners. 'Wangopara nhehwe dzichiota' means 'Those who tan hides until they are soft'."
+    },
+    "saka": {
+      "term": "Chikwira chaSaka",
+      "definition": "The 'Hill Palace of King Saka'. A residence of such high status that one must kneel to climb/enter it."
+    },
+    "dzimbahwe": {
+      "term": "Dzimbahwe",
+      "definition": "A royal residence or court. Also a title of respect for the King or the seat of power."
+    },
+    "ruunji": {
+      "term": "Mt. Ruunji",
+      "definition": "The 'Mountain of Mist' (Gomo ringobuda mhute). The burial place of Kings. It is described as a challenging climb."
+    },
+    "mudowe": {
+      "term": "MuDowe",
+      "definition": "A praise name or term of endearment for a provider/sustainer in the family. Essential for prosperity."
+    },
+    "manyika": {
+      "term": "Manyika",
+      "definition": "The region where the Muponda Dynasty settled. The Kings are described as ruling Manyika from the 'Lofty Uplands'."
+    },
+    "muponda": {
+      "term": "King Muponda",
+      "definition": "The titular head of the dynasty. Praised for generosity ('Wangopa ngemwoyo wese') and forgiveness."
+    },
+    "watsomba": {
+      "term": "Watsomba",
+      "definition": "A specific location featuring a big Fig Tree (Mutsamvu) where remembrance ceremonies are held."
+    },
+    "tanganyika": {
+      "term": "Tanganyika",
+      "definition": "The place of origin (The Root/Dzinde). Modern-day Tanzania/Ruvuma region."
+    },
+    "rivers": {
+      "term": "Kasambavezi, Gorongoza, Rwenya",
+      "definition": "The great rivers crossed during the migration south. Kasambavezi is the Zambezi River."
+    }
+  }
+}
