@@ -49,6 +49,21 @@ import { poemStanzas } from '@/data/poem';
       </nav>
 
       <div>
+        <div class='lg:hidden -mx-6 px-6 mb-8 overflow-x-auto'>
+          <div class='flex gap-2 w-max'>
+            {
+              poemStanzas.map((stanza) => (
+                <a
+                  href={`#${stanza.slug}`}
+                  class='shrink-0 px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition whitespace-nowrap'
+                >
+                  {stanza.title}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
         <div class='flex flex-wrap items-center justify-between gap-4 mb-10'>
           <p class='text-sm text-muted-foreground max-w-md'>
             The praise poem of the Muponda Dynasty (Nyere/Nzvidzi), read as a

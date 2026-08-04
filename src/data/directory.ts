@@ -5,6 +5,7 @@ export interface Business {
   category: string;
   description: string;
   details: string;
+  website?: string;
 }
 
 export const businesses: Business[] = [
@@ -15,6 +16,7 @@ export const businesses: Business[] = [
     category: 'Web Development',
     description: '[Details coming soon]',
     details: '[Placeholder] Services offered, contact info and location will go here once confirmed.',
+    website: 'https://apexwebsolutions.co.za/',
   },
   {
     slug: 'tender-edge-solutions',
@@ -23,6 +25,7 @@ export const businesses: Business[] = [
     category: 'Tender & Procurement Services',
     description: '[Details coming soon]',
     details: '[Placeholder] Services offered, contact info and location will go here once confirmed.',
+    website: 'https://tenderedgesolutions.co.za/',
   },
   {
     slug: 'kariba-fish',

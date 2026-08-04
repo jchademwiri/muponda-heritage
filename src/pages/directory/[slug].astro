@@ -56,6 +56,18 @@ const sidebarItems = businesses.map((b) => ({
               <p class='text-sm text-muted-foreground'>Owner</p>
               <p class='font-bold text-foreground'>{business.owner}</p>
             </div>
+            {
+              business.website && (
+                <a
+                  href={business.website}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-sm font-semibold text-foreground hover:bg-muted transition'
+                >
+                  <i class='fas fa-arrow-up-right-from-square' /> Visit Website
+                </a>
+              )
+            }
           </div>
 
           <p class='text-muted-foreground leading-relaxed mb-6'>

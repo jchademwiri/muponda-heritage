@@ -41,9 +41,16 @@ import { businesses } from '@/data/directory';
               Owner: {b.owner}
             </p>
             <p class='text-sm text-muted-foreground'>{b.description}</p>
-            <span class='mt-4 text-sm font-semibold text-primary inline-flex items-center gap-1'>
-              View details <i class='fas fa-arrow-right text-xs' />
-            </span>
+            <div class='mt-4 flex items-center justify-between'>
+              <span class='text-sm font-semibold text-primary inline-flex items-center gap-1'>
+                View details <i class='fas fa-arrow-right text-xs' />
+              </span>
+              {
+                b.website && (
+                  <i class='fas fa-globe text-muted-foreground/50 text-sm' title='Has a website' />
+                )
+              }
+            </div>
           </a>
         ))
       }
