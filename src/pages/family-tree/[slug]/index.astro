@@ -2,7 +2,6 @@
 import Layout from '@/layouts/Layout.astro';
 import PageHero from '@/components/shared/PageHero.astro';
 import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
-import FamilyTreeNode from '@/components/shared/FamilyTreeNode.astro';
 import { families, getRoots, getChildren } from '@/data/families';
 
 export function getStaticPaths() {
@@ -37,16 +36,16 @@ const unconfirmedCount = family.members.filter((p) => !p.confirmed).length;
     </a>
 
     <PlaceholderNotice
-      text={`${family.members.length} people recorded so far. Entries tagged "unconfirmed" (${unconfirmedCount} total) still need verification. Pick an ancestor below to jump to their branch.`}
+      text={`${family.members.length} people recorded so far. Entries tagged "unconfirmed" (${unconfirmedCount} total) still need verification. Pick an ancestor below to open their branch.`}
     />
 
-    <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16'>
+    <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
       {
         roots.map((root) => {
           const childCount = getChildren(family.members, root.id).length;
           return (
             <a
-              href={`#${root.id}`}
+              href={`/family-tree/${family.slug}/${root.id}`}
               class='group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col'
             >
               <div class='w-12 h-12 rounded-lg bg-muponda-green/10 text-muponda-green flex items-center justify-center mb-4 text-xl group-hover:bg-muponda-green group-hover:text-white transition'>
@@ -72,23 +71,6 @@ const unconfirmedCount = family.members.filter((p) => !p.confirmed).length;
           );
         })
       }
-    </div>
-
-    <div class='bg-card border border-border rounded-xl p-6 md:p-10'>
-      <ul class='space-y-8'>
-        {roots.map((root) => <FamilyTreeNode person={root} members={family.members} />)}
-      </ul>
-    </div>
-
-    <div class='bg-card border border-border rounded-xl p-8 text-center mt-12'>
-      <i class='fas fa-sitemap text-4xl text-muponda-green mb-4'></i>
-      <h2 class='text-xl font-bold text-foreground mb-2'>
-        Searchable, Zoomable Tree — Coming Soon
-      </h2>
-      <p class='text-muted-foreground max-w-xl mx-auto'>
-        This collapsible list is the first pass. A future version will add
-        search, individual profile pages, and a zoomable chart view.
-      </p>
     </div>
   </div>
 </Layout>
