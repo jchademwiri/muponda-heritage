@@ -1,0 +1,91 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+
+const phases = [
+  {
+    name: 'Phase 1 — Public Foundation',
+    status: 'Complete',
+    description:
+      'Establish the public-facing platform: culture, history, totem and praise poem content.',
+  },
+  {
+    name: 'Phase 1.5 — Platform Rebuild',
+    status: 'In Progress',
+    description:
+      'Expand the site structure — family tree, gallery, events, elders, directory and stories — ready for real content.',
+  },
+  {
+    name: 'Phase 2 — Authentication & Inner Circle',
+    status: 'Planned',
+    description:
+      'Verified family accounts, a gatekeeper approval flow, and protected access to sensitive family data.',
+  },
+  {
+    name: 'Phase 3 — Interactive Family Tree',
+    status: 'Planned',
+    description:
+      'A searchable, interactive genealogy explorer with individual profile pages.',
+  },
+];
+---
+
+<Layout
+  title='About'
+  description='The mission, purpose and roadmap behind the Muponda Dynasty Digital Heritage Platform.'
+>
+  <PageHero
+    eyebrow='Nhaka YeMuponda'
+    title='About This Platform'
+    subtitle='Why we are building a digital home for the Muponda family.'
+    bgClass='bg-muponda-purple'
+  />
+
+  <div class='max-w-4xl mx-auto px-6 py-16'>
+    <PlaceholderNotice
+      text='Replace this mission statement with the family-approved wording once available.'
+    />
+
+    <section class='mb-16'>
+      <h2 class='text-2xl font-bold text-foreground mb-4'>Our Mission</h2>
+      <p class='text-muted-foreground leading-relaxed'>
+        [Placeholder] The Muponda Dynasty Digital Heritage Platform exists to
+        preserve the culture, history and genealogy of the Muponda
+        (Nyere/Nzvidzi) family in a lasting, accessible digital archive —
+        connecting descendants across generations and geographies, and
+        keeping the praise poem, sacred sites and family stories alive for
+        those who come after us.
+      </p>
+    </section>
+
+    <section class='mb-16'>
+      <h2 class='text-2xl font-bold text-foreground mb-4'>Who We Are</h2>
+      <p class='text-muted-foreground leading-relaxed'>
+        [Placeholder] A short note on who leads/maintains this project and
+        how the family can get involved.
+      </p>
+    </section>
+
+    <section>
+      <h2 class='text-2xl font-bold text-foreground mb-8'>Project Roadmap</h2>
+      <div class='space-y-6'>
+        {
+          phases.map((phase) => (
+            <div class='bg-card border border-border rounded-lg p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2'>
+              <div>
+                <h3 class='font-bold text-foreground'>{phase.name}</h3>
+                <p class='text-sm text-muted-foreground mt-1'>
+                  {phase.description}
+                </p>
+              </div>
+              <span class='text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-muted text-muted-foreground self-start sm:self-center whitespace-nowrap'>
+                {phase.status}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+
+const elders = [
+  {
+    name: '[Elder / King Name]',
+    title: '[Title, e.g. King / Chief / Elder]',
+    years: '[c. 19XX – 19XX]',
+    bio: '[Placeholder] A short biography honoring this ancestor’s life and contribution to the family.',
+  },
+  {
+    name: '[Elder / King Name]',
+    title: '[Title]',
+    years: '[c. 19XX – 19XX]',
+    bio: '[Placeholder] A short biography honoring this ancestor’s life and contribution to the family.',
+  },
+  {
+    name: '[Elder / King Name]',
+    title: '[Title]',
+    years: '[c. 19XX – 19XX]',
+    bio: '[Placeholder] A short biography honoring this ancestor’s life and contribution to the family.',
+  },
+];
+---
+
+<Layout
+  title='Elders & Leaders'
+  description='Honoring the elders, kings and leaders of the Muponda Dynasty.'
+>
+  <PageHero
+    eyebrow='Madzimambo neVakuru'
+    title='Elders & Leaders'
+    subtitle='Remembering those who led, guided and shaped the Muponda family.'
+    bgClass='bg-muponda-purple'
+  />
+
+  <div class='max-w-6xl mx-auto px-6 py-16'>
+    <PlaceholderNotice text='Replace these placeholder profiles with real names, dates, photos and biographies.' />
+
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+      {
+        elders.map((elder) => (
+          <div class='bg-card border border-border rounded-xl overflow-hidden shadow-sm'>
+            <div class='h-48 bg-muted flex items-center justify-center'>
+              <i class='fas fa-user-tie text-5xl text-muted-foreground/40' />
+            </div>
+            <div class='p-6'>
+              <h3 class='font-bold text-lg text-foreground'>{elder.name}</h3>
+              <p class='text-sm text-primary font-semibold mb-1'>
+                {elder.title}
+              </p>
+              <p class='text-xs text-muted-foreground mb-3'>{elder.years}</p>
+              <p class='text-sm text-muted-foreground leading-relaxed'>
+                {elder.bio}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

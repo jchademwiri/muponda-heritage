@@ -1,0 +1,63 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+
+const events = [
+  {
+    date: '[Date TBC]',
+    title: '[Annual Family Reunion]',
+    location: '[Location]',
+    description: '[Placeholder] Details about the gathering, who should attend, and what to expect.',
+  },
+  {
+    date: '[Date TBC]',
+    title: '[Remembrance Ceremony — Watsomba]',
+    location: 'Watsomba, the Great Fig Tree',
+    description: '[Placeholder] Details about this remembrance ceremony and its significance.',
+  },
+];
+---
+
+<Layout
+  title='Events'
+  description='Upcoming Muponda family reunions, remembrance ceremonies and gatherings.'
+>
+  <PageHero
+    eyebrow='Zviitiko'
+    title='Family Events'
+    subtitle='Reunions, remembrance ceremonies and gatherings — mark your calendar.'
+    bgClass='bg-muponda-green'
+  />
+
+  <div class='max-w-4xl mx-auto px-6 py-16'>
+    <PlaceholderNotice text='Add real dates, locations and details for upcoming family events.' />
+
+    <div class='space-y-6'>
+      {
+        events.map((event) => (
+          <div class='bg-card border border-border rounded-lg p-6 flex flex-col sm:flex-row gap-4'>
+            <div class='shrink-0 w-full sm:w-32 text-center sm:text-left'>
+              <div class='inline-flex sm:flex flex-col items-center sm:items-start bg-muted rounded-lg px-4 py-2'>
+                <i class='fas fa-calendar-days text-primary mb-1' />
+                <span class='text-sm font-bold text-foreground'>
+                  {event.date}
+                </span>
+              </div>
+            </div>
+            <div>
+              <h3 class='font-bold text-lg text-foreground'>{event.title}</h3>
+              <p class='text-sm text-muted-foreground mb-2'>
+                <i class='fas fa-location-dot mr-1' />
+                {event.location}
+              </p>
+              <p class='text-sm text-muted-foreground leading-relaxed'>
+                {event.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
