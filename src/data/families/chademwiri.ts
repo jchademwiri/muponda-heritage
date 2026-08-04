@@ -65,6 +65,7 @@ export const chademwiriMembers: FamilyMember[] = [
   { id: 'jairos', name: 'Jairos', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'naison', name: 'Naison', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'aaron', name: 'Aaron', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
+  { id: 'george-mai-emma', name: 'George', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true, notes: 'Named after his father, George.' },
 
   { id: 'elisha-1971', name: 'Elisha', birthYear: 1971, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
   { id: 'grace-1974', name: 'Grace', birthYear: 1974, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
@@ -104,7 +105,7 @@ export const chademwiriMembers: FamilyMember[] = [
   { id: 'johane', name: 'Johane', fatherId: 'rhino-1976', motherId: 'mai-tadiwa', generation: 3, confirmed: true },
   { id: 'tanaka', name: 'Tanaka', fatherId: 'rhino-1976', motherId: 'mai-tadiwa', generation: 3, confirmed: true },
   { id: 'tanyaradzwa', name: 'Tanyaradzwa', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true },
-  { id: 'rhino-ii', name: 'Rhino', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true, notes: "Named after his grandfather, Rhino '76." },
+  { id: 'rhino-ii', name: 'Rhino', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true, notes: "Named after his father, Rhino '76." },
   { id: 'rhyn', name: 'Rhyn', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true },
 
   // --- Generation 3: Children of Sylvester '78 ---

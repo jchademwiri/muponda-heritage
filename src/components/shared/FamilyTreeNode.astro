@@ -43,17 +43,19 @@ const directChildren = getChildren(members, person.id);
             const children = getChildrenOfUnion(members, person.id, spouse.id);
             return (
               <li>
-                <div class='text-sm text-muted-foreground flex items-center gap-2'>
-                  <i class='fas fa-heart text-[10px] text-muponda-earth' />
-                  {spouse.name}
-                </div>
-                {children.length > 0 && (
-                  <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-1'>
-                    {children.map((child) => (
-                      <Astro.self person={child} members={members} />
-                    ))}
-                  </ul>
-                )}
+                <details open>
+                  <summary class='cursor-pointer text-sm text-muted-foreground flex items-center gap-2 marker:text-muponda-earth'>
+                    <i class='fas fa-heart text-[10px] text-muponda-earth' />
+                    {spouse.name}
+                  </summary>
+                  {children.length > 0 && (
+                    <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-1'>
+                      {children.map((child) => (
+                        <Astro.self person={child} members={members} />
+                      ))}
+                    </ul>
+                  )}
+                </details>
               </li>
             );
           })}
