@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import PageHero from '@/components/shared/PageHero.astro';
 import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+import DetailSidebar from '@/components/shared/DetailSidebar.astro';
 import { businesses } from '@/data/directory';
 
 export function getStaticPaths() {
@@ -12,6 +13,13 @@ export function getStaticPaths() {
 }
 
 const { business } = Astro.props;
+
+const sidebarItems = businesses.map((b) => ({
+  href: `/directory/${b.slug}`,
+  title: b.name,
+  subtitle: b.category,
+  active: b.slug === business.slug,
+}));
 ---
 
 <Layout
@@ -25,7 +33,7 @@ const { business } = Astro.props;
     bgClass='bg-muponda-purple'
   />
 
-  <div class='max-w-3xl mx-auto px-6 py-16'>
+  <div class='max-w-6xl mx-auto px-6 py-16'>
     <a
       href='/directory'
       class='inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition mb-8'
@@ -33,28 +41,34 @@ const { business } = Astro.props;
       <i class='fas fa-arrow-left' /> All Businesses
     </a>
 
-    <PlaceholderNotice text='Full details for this business are still to come — see CONTENT-NEEDED.md.' />
+    <div class='grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8'>
+      <DetailSidebar heading='All Businesses' items={sidebarItems} />
 
-    <div class='bg-card border border-border rounded-xl p-6 md:p-10'>
-      <div class='flex items-center gap-4 mb-8'>
-        <div class='w-14 h-14 rounded-lg bg-muponda-gold/20 text-yellow-700 flex items-center justify-center text-2xl'>
-          <i class='fas fa-store' />
+      <div>
+        <PlaceholderNotice text='Full details for this business are still to come — see CONTENT-NEEDED.md.' />
+
+        <div class='bg-card border border-border rounded-xl p-6 md:p-10'>
+          <div class='flex items-center gap-4 mb-8'>
+            <div class='w-14 h-14 rounded-lg bg-muponda-gold/20 text-yellow-700 flex items-center justify-center text-2xl'>
+              <i class='fas fa-store' />
+            </div>
+            <div>
+              <p class='text-sm text-muted-foreground'>Owner</p>
+              <p class='font-bold text-foreground'>{business.owner}</p>
+            </div>
+          </div>
+
+          <p class='text-muted-foreground leading-relaxed mb-6'>
+            {business.description}
+          </p>
+
+          <div class='border-t border-border pt-6'>
+            <h2 class='text-lg font-bold text-foreground mb-3'>Details</h2>
+            <p class='text-muted-foreground leading-relaxed'>
+              {business.details}
+            </p>
+          </div>
         </div>
-        <div>
-          <p class='text-sm text-muted-foreground'>Owner</p>
-          <p class='font-bold text-foreground'>{business.owner}</p>
-        </div>
-      </div>
-
-      <p class='text-muted-foreground leading-relaxed mb-6'>
-        {business.description}
-      </p>
-
-      <div class='border-t border-border pt-6'>
-        <h2 class='text-lg font-bold text-foreground mb-3'>Details</h2>
-        <p class='text-muted-foreground leading-relaxed'>
-          {business.details}
-        </p>
       </div>
     </div>
   </div>

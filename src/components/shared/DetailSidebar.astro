@@ -1,0 +1,43 @@
+---
+interface SidebarItem {
+  href: string;
+  title: string;
+  subtitle?: string;
+  active: boolean;
+}
+
+interface Props {
+  heading: string;
+  items: SidebarItem[];
+}
+
+const { heading, items } = Astro.props;
+---
+
+<nav class='bg-card border border-border rounded-xl p-4 lg:sticky lg:top-24'>
+  <h2 class='text-xs font-bold uppercase tracking-widest text-muted-foreground px-2 mb-2'>
+    {heading}
+  </h2>
+  <ul class='space-y-1'>
+    {
+      items.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class:list={[
+              'block rounded-lg px-3 py-2 transition',
+              item.active
+                ? 'bg-primary/10 text-primary font-semibold'
+                : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+            ]}
+          >
+            <span class='block text-sm'>{item.title}</span>
+            {item.subtitle && (
+              <span class='block text-xs opacity-70'>{item.subtitle}</span>
+            )}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
