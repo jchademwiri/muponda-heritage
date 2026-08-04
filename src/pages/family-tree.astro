@@ -1,0 +1,75 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+
+const generations = [
+  {
+    label: 'Generation 1',
+    name: '[Founding Ancestor Name]',
+    note: 'Placeholder — earliest recorded ancestor.',
+  },
+  {
+    label: 'Generation 2',
+    name: '[Name]',
+    note: 'Placeholder — children of Generation 1.',
+  },
+  {
+    label: 'Generation 3',
+    name: '[Name]',
+    note: 'Placeholder — children of Generation 2.',
+  },
+];
+---
+
+<Layout
+  title='Family Tree'
+  description='Explore the Muponda family genealogy — generations, lineages and descendants.'
+>
+  <PageHero
+    eyebrow='Rudzi RweMuponda'
+    title='Family Tree'
+    subtitle='A living record of the Muponda lineage, from our founding ancestors to today.'
+    bgClass='bg-muponda-green'
+  />
+
+  <div class='max-w-5xl mx-auto px-6 py-16'>
+    <PlaceholderNotice
+      text='This page will become an interactive, searchable family tree once genealogy data is supplied. Below is a placeholder structure.'
+    />
+
+    <div class='bg-card border border-border rounded-xl p-8 text-center mb-12'>
+      <i class='fas fa-sitemap text-4xl text-muponda-green mb-4'></i>
+      <h2 class='text-xl font-bold text-foreground mb-2'>
+        Interactive Tree — Coming Soon
+      </h2>
+      <p class='text-muted-foreground max-w-xl mx-auto'>
+        Once family records are digitized, this space will host a
+        searchable, zoomable family tree with individual profile pages for
+        each family member.
+      </p>
+    </div>
+
+    <h2 class='text-2xl font-bold text-foreground mb-6'>
+      Generations (Placeholder)
+    </h2>
+    <div class='space-y-4'>
+      {
+        generations.map((gen) => (
+          <div class='flex items-center gap-4 bg-card border border-border rounded-lg p-5'>
+            <div class='w-12 h-12 rounded-full bg-muponda-green/10 text-muponda-green flex items-center justify-center font-bold'>
+              <i class='fas fa-user' />
+            </div>
+            <div>
+              <p class='text-xs uppercase tracking-wide text-muted-foreground font-bold'>
+                {gen.label}
+              </p>
+              <p class='font-bold text-foreground'>{gen.name}</p>
+              <p class='text-sm text-muted-foreground'>{gen.note}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,55 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+
+const faqs = [
+  {
+    q: 'Who can join the family portal?',
+    a: '[Placeholder] Explain eligibility — e.g. any verified descendant of the Muponda Dynasty.',
+  },
+  {
+    q: 'How is my information verified?',
+    a: '[Placeholder] Explain the admin approval / gatekeeper process.',
+  },
+  {
+    q: 'Can I contribute photos or stories?',
+    a: '[Placeholder] Explain how family members can submit content.',
+  },
+  {
+    q: 'Is my data private?',
+    a: '[Placeholder] Explain data privacy and who can see member information.',
+  },
+];
+---
+
+<Layout
+  title='FAQ'
+  description='Frequently asked questions about the Muponda Dynasty Digital Heritage Platform.'
+>
+  <PageHero
+    eyebrow='Mibvunzo'
+    title='Frequently Asked Questions'
+    bgClass='bg-muponda-purple'
+  />
+
+  <div class='max-w-3xl mx-auto px-6 py-16'>
+    <PlaceholderNotice text='Replace these with the real policies once decided.' />
+
+    <div class='space-y-4'>
+      {
+        faqs.map((item) => (
+          <details class='bg-card border border-border rounded-lg p-5 group'>
+            <summary class='font-bold text-foreground cursor-pointer flex items-center justify-between'>
+              {item.q}
+              <i class='fas fa-chevron-down text-muted-foreground text-sm group-open:rotate-180 transition-transform' />
+            </summary>
+            <p class='text-muted-foreground text-sm mt-3 leading-relaxed'>
+              {item.a}
+            </p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

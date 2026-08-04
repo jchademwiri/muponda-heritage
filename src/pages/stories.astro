@@ -1,0 +1,54 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+
+const stories = [
+  {
+    title: '[Story Title]',
+    author: '[Told by / Written by]',
+    excerpt:
+      '[Placeholder] A short excerpt of an oral history, memory or family story passed down through generations.',
+  },
+  {
+    title: '[Story Title]',
+    author: '[Told by / Written by]',
+    excerpt:
+      '[Placeholder] A short excerpt of an oral history, memory or family story passed down through generations.',
+  },
+];
+---
+
+<Layout
+  title='Family Stories'
+  description='Oral histories, memories and stories passed down through the Muponda family.'
+>
+  <PageHero
+    eyebrow='Ngano NeNhoroondo'
+    title='Family Stories'
+    subtitle='Oral histories and memories, preserved in the words of those who lived them.'
+    bgClass='bg-muponda-earth'
+  />
+
+  <div class='max-w-4xl mx-auto px-6 py-16'>
+    <PlaceholderNotice text='Share real oral histories, memories or written stories to replace these placeholders.' />
+
+    <div class='space-y-8'>
+      {
+        stories.map((story) => (
+          <div class='bg-card border border-border rounded-lg p-8 border-l-4 border-l-muponda-earth'>
+            <h3 class='text-xl font-bold text-foreground mb-1'>
+              {story.title}
+            </h3>
+            <p class='text-xs uppercase tracking-wide text-muted-foreground font-bold mb-4'>
+              {story.author}
+            </p>
+            <p class='text-muted-foreground leading-relaxed italic'>
+              {story.excerpt}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,29 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  bgClass?: string;
+  textClass?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  bgClass = 'bg-muponda-earth',
+  textClass = 'text-white',
+} = Astro.props;
+---
+
+<div class={`${bgClass} py-16 text-center ${textClass}`}>
+  {
+    eyebrow && (
+      <p class='uppercase tracking-widest text-sm font-bold opacity-80 mb-2'>
+        {eyebrow}
+      </p>
+    )
+  }
+  <h1 class='text-3xl md:text-5xl font-serif font-bold mb-4'>{title}</h1>
+  {subtitle && <p class='opacity-90 text-lg max-w-2xl mx-auto px-4'>{subtitle}</p>}
+</div>
