@@ -112,14 +112,16 @@ Structure is built — each event now has its own detail page at
 
 ## Group 8 — Business Directory (`/directory`)
 
-**Businesses and owners confirmed:**
-- [x] Apex Web Solutions — owner: Jacob Chademwiri
-- [x] Tender Edge Solutions — owner: Jacob Chademwiri
+**Fully detailed (category, description, contact, website all confirmed):**
+- [x] Apex Web Solutions — owner: Jacob Chademwiri — apexwebsolutions.co.za, info@apexwebsolutions.co.za, +27 74 049 1433
+- [x] Tender Edge Solutions — owner: Jacob Chademwiri — tenderedgesolutions.co.za, tenders@tenderedgesolutions.co.za, 074 501 7094, Centurion, Gauteng
+
+**Owner confirmed, still need category/description/contact:**
 - [x] Kariba Fish — owner: Sylvester
 - [x] Solar Systems — owner: Nemaunga
 - [x] Rhino Wood Works — owner: Rhino
 
-Still needed for each:
+Still needed for these three:
 - [ ] Confirm/correct category (currently a best guess from the business name)
 - [ ] Description
 - [ ] Contact info (phone/email/social)
