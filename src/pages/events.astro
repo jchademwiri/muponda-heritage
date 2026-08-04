@@ -2,21 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import PageHero from '@/components/shared/PageHero.astro';
 import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
-
-const events = [
-  {
-    date: '[Date TBC]',
-    title: '[Annual Family Reunion]',
-    location: '[Location]',
-    description: '[Placeholder] Details about the gathering, who should attend, and what to expect.',
-  },
-  {
-    date: '[Date TBC]',
-    title: '[Remembrance Ceremony — Watsomba]',
-    location: 'Watsomba, the Great Fig Tree',
-    description: '[Placeholder] Details about this remembrance ceremony and its significance.',
-  },
-];
+import { events } from '@/data/events';
 ---
 
 <Layout
@@ -36,7 +22,10 @@ const events = [
     <div class='space-y-6'>
       {
         events.map((event) => (
-          <div class='bg-card border border-border rounded-lg p-6 flex flex-col sm:flex-row gap-4'>
+          <a
+            href={`/events/${event.slug}`}
+            class='group block bg-card border border-border rounded-lg p-6 flex flex-col sm:flex-row gap-4 hover:shadow-lg hover:-translate-y-0.5 transition duration-300'
+          >
             <div class='shrink-0 w-full sm:w-32 text-center sm:text-left'>
               <div class='inline-flex sm:flex flex-col items-center sm:items-start bg-muted rounded-lg px-4 py-2'>
                 <i class='fas fa-calendar-days text-primary mb-1' />
@@ -45,8 +34,10 @@ const events = [
                 </span>
               </div>
             </div>
-            <div>
-              <h3 class='font-bold text-lg text-foreground'>{event.title}</h3>
+            <div class='flex-1'>
+              <h3 class='font-bold text-lg text-foreground group-hover:text-primary transition'>
+                {event.title}
+              </h3>
               <p class='text-sm text-muted-foreground mb-2'>
                 <i class='fas fa-location-dot mr-1' />
                 {event.location}
@@ -54,8 +45,11 @@ const events = [
               <p class='text-sm text-muted-foreground leading-relaxed'>
                 {event.description}
               </p>
+              <span class='mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary'>
+                View details <i class='fas fa-arrow-right text-xs' />
+              </span>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>

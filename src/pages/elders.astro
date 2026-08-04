@@ -3,24 +3,49 @@ import Layout from '@/layouts/Layout.astro';
 import PageHero from '@/components/shared/PageHero.astro';
 import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
 
+const themes = [
+  { bg: 'bg-muponda-purple/10', text: 'text-muponda-purple' },
+  { bg: 'bg-muponda-gold/20', text: 'text-yellow-700' },
+  { bg: 'bg-muponda-green/10', text: 'text-muponda-green' },
+  { bg: 'bg-muponda-earth/10', text: 'text-muponda-earth' },
+];
+
 const elders = [
   {
-    name: '[Elder / King Name]',
-    title: '[Title, e.g. King / Chief / Elder]',
-    years: '[c. 19XX – 19XX]',
-    bio: '[Placeholder] A short biography honoring this ancestor’s life and contribution to the family.',
+    name: '[Elder Name] — Founding Generation',
+    title: 'King / Mambo',
+    years: '[c. 18XX – 19XX]',
+    bio: '[Placeholder] A short biography honoring this ancestor’s life, reign and contribution to the Muponda Dynasty.',
   },
   {
-    name: '[Elder / King Name]',
-    title: '[Title]',
-    years: '[c. 19XX – 19XX]',
-    bio: '[Placeholder] A short biography honoring this ancestor’s life and contribution to the family.',
+    name: '[Elder Name] — Second Generation',
+    title: 'Queen / Vahosi',
+    years: '[c. 18XX – 19XX]',
+    bio: '[Placeholder] A short biography of this ancestor’s role in guiding the family and preserving tradition.',
   },
   {
-    name: '[Elder / King Name]',
-    title: '[Title]',
+    name: '[Elder Name] — Village Head',
+    title: 'Sabhuku',
     years: '[c. 19XX – 19XX]',
-    bio: '[Placeholder] A short biography honoring this ancestor’s life and contribution to the family.',
+    bio: '[Placeholder] A short biography of this ancestor’s leadership within the local community.',
+  },
+  {
+    name: '[Elder Name] — Spiritual Leader',
+    title: "N'anga / Spirit Medium",
+    years: '[c. 19XX – 19XX]',
+    bio: '[Placeholder] A short biography describing this ancestor’s spiritual guidance and ceremonies led.',
+  },
+  {
+    name: '[Elder Name] — Family Historian',
+    title: 'Keeper of the Praise Poem',
+    years: '[c. 19XX – 19XX]',
+    bio: '[Placeholder] A short biography of the ancestor credited with preserving the Detembo ReNyere.',
+  },
+  {
+    name: '[Elder Name] — Master Tanner',
+    title: 'Mapara',
+    years: '[c. 19XX – 19XX]',
+    bio: '[Placeholder] A short biography honoring this ancestor’s craft, referenced in the praise poem itself.',
   },
 ];
 ---
@@ -39,25 +64,30 @@ const elders = [
   <div class='max-w-6xl mx-auto px-6 py-16'>
     <PlaceholderNotice text='Replace these placeholder profiles with real names, dates, photos and biographies.' />
 
-    <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {
-        elders.map((elder) => (
-          <div class='bg-card border border-border rounded-xl overflow-hidden shadow-sm'>
-            <div class='h-48 bg-muted flex items-center justify-center'>
-              <i class='fas fa-user-tie text-5xl text-muted-foreground/40' />
+        elders.map((elder, i) => {
+          const theme = themes[i % themes.length];
+          return (
+            <div class='group bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300'>
+              <div
+                class:list={['h-40 flex items-center justify-center', theme.bg]}
+              >
+                <i class:list={['fas fa-user-tie text-4xl', theme.text]} />
+              </div>
+              <div class='p-6'>
+                <h3 class='font-bold text-lg text-foreground'>{elder.name}</h3>
+                <p class:list={['text-sm font-semibold mb-1', theme.text]}>
+                  {elder.title}
+                </p>
+                <p class='text-xs text-muted-foreground mb-3'>{elder.years}</p>
+                <p class='text-sm text-muted-foreground leading-relaxed'>
+                  {elder.bio}
+                </p>
+              </div>
             </div>
-            <div class='p-6'>
-              <h3 class='font-bold text-lg text-foreground'>{elder.name}</h3>
-              <p class='text-sm text-primary font-semibold mb-1'>
-                {elder.title}
-              </p>
-              <p class='text-xs text-muted-foreground mb-3'>{elder.years}</p>
-              <p class='text-sm text-muted-foreground leading-relaxed'>
-                {elder.bio}
-              </p>
-            </div>
-          </div>
-        ))
+          );
+        })
       }
     </div>
   </div>

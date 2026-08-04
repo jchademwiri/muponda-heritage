@@ -4,7 +4,7 @@ interface Props {
   description: string;
   href: string;
   icon: string;
-  theme: 'purple' | 'gold' | 'green';
+  theme: 'purple' | 'gold' | 'green' | 'earth';
   delay?: string;
 }
 
@@ -29,6 +29,12 @@ const colors = {
     text: 'text-muponda-green',
     hoverBg: 'group-hover:bg-muponda-green',
     hoverText: 'group-hover:text-muponda-green',
+  },
+  earth: {
+    bg: 'bg-muponda-earth/10',
+    text: 'text-muponda-earth',
+    hoverBg: 'group-hover:bg-muponda-earth',
+    hoverText: 'group-hover:text-muponda-earth',
   },
 };
 

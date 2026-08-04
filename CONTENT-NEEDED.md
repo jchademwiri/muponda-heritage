@@ -101,22 +101,34 @@ For each story:
 
 ## Group 7 — Events (`/events`)
 
-For each upcoming or recurring event:
-- [ ] Event name
-- [ ] Date (or recurrence, e.g. "first Saturday of December")
-- [ ] Location
-- [ ] Description / who should attend
+Structure is built — each event now has its own detail page at
+`/events/[slug]` (data lives in `src/data/events.ts`). Still placeholder:
+- [ ] Event name, date, location for the Annual Family Reunion and the
+      Watsomba Remembrance Ceremony (both exist as entries, no real date yet)
+- [ ] Full agenda / what-to-expect copy for each event's detail page
+- [ ] Any other recurring events to add
 
 ---
 
 ## Group 8 — Business Directory (`/directory`)
 
-For each family-owned business to list:
-- [ ] Business name
-- [ ] Owner (family member name)
-- [ ] Category (e.g. Retail, Services, Agriculture)
+**Businesses and owners confirmed:**
+- [x] Apex Web Solutions — owner: Jacob Chademwiri
+- [x] Tender Edge Solutions — owner: Jacob Chademwiri
+- [x] Kariba Fish — owner: Sylvester
+- [x] Solar Systems — owner: Nemaunga
+- [x] Rhino Wood Works — owner: Rhino
+
+Still needed for each:
+- [ ] Confirm/correct category (currently a best guess from the business name)
 - [ ] Description
 - [ ] Contact info (phone/email/social)
+- [ ] For "Sylvester" and "Rhino" specifically — there are two people with
+      each name in the Chademwiri tree (Sylvester '78 and his son; Rhino '76
+      and his grandson) — which one owns the business, so it can link to
+      the right family-tree entry?
+- [ ] Who/what is "Nemaunga" — a family member not yet in the tree, or a
+      different spelling of an existing name?
 
 *Also confirm: should this be public immediately, or should it wait until
 the member portal/approval workflow exists (Phase 2)?*

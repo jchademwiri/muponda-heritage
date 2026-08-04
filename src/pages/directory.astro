@@ -2,21 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import PageHero from '@/components/shared/PageHero.astro';
 import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
-
-const businesses = [
-  {
-    name: '[Business Name]',
-    owner: '[Family Member Name]',
-    category: '[Category]',
-    description: '[Placeholder] What this business does and how to reach it.',
-  },
-  {
-    name: '[Business Name]',
-    owner: '[Family Member Name]',
-    category: '[Category]',
-    description: '[Placeholder] What this business does and how to reach it.',
-  },
-];
+import { businesses } from '@/data/directory';
 ---
 
 <Layout
@@ -31,18 +17,23 @@ const businesses = [
   />
 
   <div class='max-w-5xl mx-auto px-6 py-16'>
-    <PlaceholderNotice text='Listings will require an approval workflow once accounts exist. For now, placeholder entries show the intended layout.' />
+    <PlaceholderNotice text='Businesses and owners are confirmed. Category, description and contact details for each are still needed — see CONTENT-NEEDED.md. A submission/approval workflow will come with the member portal.' />
 
-    <div class='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12'>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
       {
         businesses.map((b) => (
-          <div class='bg-card border border-border rounded-lg p-6'>
+          <a
+            href={`/directory/${b.slug}`}
+            class='group bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col'
+          >
             <div class='flex items-center gap-3 mb-3'>
-              <div class='w-10 h-10 rounded-lg bg-muponda-gold/20 text-yellow-700 flex items-center justify-center'>
+              <div class='w-10 h-10 rounded-lg bg-muponda-gold/20 text-yellow-700 flex items-center justify-center group-hover:bg-muponda-gold group-hover:text-white transition'>
                 <i class='fas fa-store' />
               </div>
               <div>
-                <h3 class='font-bold text-foreground'>{b.name}</h3>
+                <h3 class='font-bold text-foreground group-hover:text-primary transition'>
+                  {b.name}
+                </h3>
                 <p class='text-xs text-muted-foreground'>{b.category}</p>
               </div>
             </div>
@@ -50,7 +41,17 @@ const businesses = [
               Owner: {b.owner}
             </p>
             <p class='text-sm text-muted-foreground'>{b.description}</p>
-          </div>
+            <div class='mt-4 flex items-center justify-between'>
+              <span class='text-sm font-semibold text-primary inline-flex items-center gap-1'>
+                View details <i class='fas fa-arrow-right text-xs' />
+              </span>
+              {
+                b.website && (
+                  <i class='fas fa-globe text-muted-foreground/50 text-sm' title='Has a website' />
+                )
+              }
+            </div>
+          </a>
         ))
       }
     </div>

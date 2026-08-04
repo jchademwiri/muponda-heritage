@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import FeatureCard from '@/components/FeatureCard.astro';
+import Button from '@/components/shared/Button.astro';
 ---
 
 <Layout title='Home'>
@@ -32,18 +33,12 @@ import FeatureCard from '@/components/FeatureCard.astro';
         ancestors, celebrating our culture, and building our future together.
       </p>
       <div class='mt-8 flex gap-4 flex-col sm:flex-row w-full sm:w-auto'>
-        <a
-          href='/join'
-          class='px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-background hover:bg-muted md:py-4 md:text-lg md:px-10 shadow-lg text-center transition transform hover:-translate-y-0.5'
-        >
+        <Button href='/join' variant='light' class='md:py-4 md:text-lg md:px-10'>
           Join the Family
-        </a>
-        <a
-          href='/culture'
-          class='px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 md:py-4 md:text-lg md:px-10 text-center transition'
-        >
+        </Button>
+        <Button href='/culture' variant='outline' class='md:py-4 md:text-lg md:px-10'>
           Read Praise Poem
-        </a>
+        </Button>
       </div>
     </div>
   </section>
@@ -62,7 +57,7 @@ import FeatureCard from '@/components/FeatureCard.astro';
         </p>
       </div>
 
-      <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+      <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
         <FeatureCard
           title='Our History'
           description='Explore the origins from Tanganyika to the sacred mountains of Ruunji and Nyazongo.'
@@ -79,12 +74,20 @@ import FeatureCard from '@/components/FeatureCard.astro';
           delay='100ms'
         />
         <FeatureCard
-          title='Family Directory'
-          description='Connect with relatives, find family-owned businesses, and discover events.'
+          title='Family Tree'
+          description='Browse the surname lines descending from the Muponda clan, starting with the Chademwiri family.'
+          icon='fa-sitemap'
+          href='/family-tree'
+          theme='earth'
+          delay='200ms'
+        />
+        <FeatureCard
+          title='Join the Portal'
+          description='Register to connect with relatives, discover events, and find family-owned businesses.'
           icon='fa-users'
           href='/join'
           theme='green'
-          delay='200ms'
+          delay='300ms'
         />
       </div>
     </div>

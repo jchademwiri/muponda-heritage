@@ -28,6 +28,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <link rel='canonical' href={canonicalURL} />
     <meta name='generator' content={Astro.generator} />
+    <meta name='theme-color' content='#2E5D32' media='(prefers-color-scheme: light)' />
+    <meta name='theme-color' content='#0f172a' media='(prefers-color-scheme: dark)' />
+
+    <!-- Fonts -->
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      rel='stylesheet'
+      href='https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap'
+    />
 
     <!-- Open Graph / Social -->
     <meta property='og:type' content='website' />

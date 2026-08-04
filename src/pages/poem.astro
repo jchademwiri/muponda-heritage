@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { poemStanzas } from '@/data/poem';
 ---
 
 <Layout
@@ -26,433 +27,116 @@ import Layout from '@/layouts/Layout.astro';
   </div>
 
   <div class='max-w-(--container-width) mx-auto px-6 mt-8 pb-20'>
-    <div
-      class='bg-card rounded-lg shadow-xl p-8 md:p-12 border-l-8 border-secondary text-card-foreground'
-    >
-      <div class='poem-text space-y-8 text-center md:text-left'>
-        <!-- Stanza 1 -->
-        <div class='space-y-3'>
-          <h3
-            class='font-bold text-primary text-xl uppercase tracking-widest border-b border-border pb-2 mb-4'
+    <div class='grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-8'>
+      <nav class='hidden lg:block bg-card border border-border rounded-xl p-4 lg:sticky lg:top-24 self-start'>
+        <h2 class='text-xs font-bold uppercase tracking-widest text-muted-foreground px-2 mb-2'>
+          Stanzas
+        </h2>
+        <ul class='space-y-1'>
+          {
+            poemStanzas.map((stanza) => (
+              <li>
+                <a
+                  href={`#${stanza.slug}`}
+                  class='block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition'
+                >
+                  {stanza.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <div class='lg:hidden -mx-6 px-6 mb-8 overflow-x-auto'>
+          <div class='flex gap-2 w-max'>
+            {
+              poemStanzas.map((stanza) => (
+                <a
+                  href={`#${stanza.slug}`}
+                  class='shrink-0 px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition whitespace-nowrap'
+                >
+                  {stanza.title}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class='flex flex-wrap items-center justify-between gap-4 mb-10'>
+          <p class='text-sm text-muted-foreground max-w-md'>
+            The praise poem of the Muponda Dynasty (Nyere/Nzvidzi), read as a
+            map of our history, sacred sites and ancestors.
+          </p>
+          <button
+            id='toggle-translations'
+            class='inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-semibold text-foreground hover:bg-muted transition shrink-0'
           >
-            Nzvidzi (Nzudzi), Nyere
-          </h3>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Mwaita Nyere!
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Well done Nyere]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Mwaita Nzvidzi!
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Well done Serval Cat]
-            </p>
-          </div>
+            <i class='fas fa-language'></i>
+            <span id='toggle-label'>Hide Translations</span>
+          </button>
         </div>
 
-        <!-- Stanza 2 -->
-        <div class='space-y-3 pt-4'>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Mwaita Samaringa! Wari Nyazongo,
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Thanks to the visionary ancestors, who are buried at Nyazonga]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Mwazvita Mapara! Wangopara nhehwe dzichiota!
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Thanks to our excellent Tanners! Great tanners who tan Leather
-              soft]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Titambire Chikwira chaSaka:
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Great appreciation! The Hill Palace of King Saka]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Chingokwirwa ngewakapfugama, Mukamira mashora Dzimbahwe.
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [The Hill Residence only climbed on your knees. Any other posture
-              is a sign of disrespect for the King]
-            </p>
-          </div>
+        <div id='poem-content' class='space-y-16'>
+          {
+            poemStanzas.map((stanza) => (
+              <section id={stanza.slug} class='scroll-mt-24'>
+                <h3 class='text-xs font-bold uppercase tracking-widest text-muponda-gold mb-6 pb-3 border-b border-border'>
+                  {stanza.title}
+                </h3>
+                <div class='space-y-7'>
+                  {stanza.lines.map((line) => (
+                    <div>
+                      <p class='font-serif text-xl md:text-2xl text-foreground leading-relaxed'>
+                        {line.shona}
+                      </p>
+                      <p class='poem-translation text-muted-foreground italic text-sm md:text-base mt-1.5'>
+                        {line.english}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            ))
+          }
         </div>
 
-        <!-- Stanza 3 (Mountains) -->
-        <div
-          class='space-y-3 pt-4 border-l-4 border-muponda-purple pl-4 md:pl-8 py-2 bg-muted/50 rounded-r-lg'
-        >
-          <h4
-            class='text-xs font-sans font-bold text-muted-foreground uppercase mb-2'
+        <div class='mt-16 text-center border-t border-border pt-8'>
+          <a
+            href='/culture'
+            class='px-8 py-3 bg-primary hover:opacity-90 text-primary-foreground rounded-full transition shadow-md inline-flex items-center'
           >
-            The Sacred Mountains
-          </h4>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Hekani wari Rurunji! Gomo reMadzimambo.
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Greetings to those buried at Mt Ruunji! The Mountain where our
-              esteemed Kings are buried]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Gomo ringokwirwa ngewakaguta!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [The challenging Mountain scaled only by strong people]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wane mwena wangogwesha
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [The weak can only crawl on their bellies]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Gomo ringobuda mhute!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [The sacred, mystical Mountain of mist]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wari Rurunji kudada, Wangomwa mweru!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Proud Ruunji people! Who only drink the best beer/water/milk]
-            </p>
-          </div>
+            <i class='fas fa-arrow-left mr-2'></i> Back to Highlights
+          </a>
         </div>
-
-        <!-- Stanza 4 (MuDowe) -->
-        <div class='space-y-3 pt-4'>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wazvita hako MuDowe wangu!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Well done, my dear MuDowe]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              MuDowe ungowanikwa ngewatanga
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [For their goodness the Dowe are betrothed to early birds]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Usina MuDowe ungorira!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Without MuDowe livelihoods and prosperity are never assured]
-            </p>
-          </div>
-        </div>
-
-        <!-- Stanza 5 (Revered Rulers) -->
-        <div class='space-y-3 pt-4'>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Maita Kwerera Samaringa wari Nyazongo
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Thank you our ancestors/fore-bearers resting at Nyazongo]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Titambire wari Zeramira! Titambire wari Hwahwazira:
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Welcome and great appreciation to those interred at Zeramira!
-              Thanks to Ancestors at Mt Hwahwazira]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Gomo remadzishe. Tingotenda wari Manyika!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [The mountain where our revered rulers rest. Thank you those in
-              Manyika]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wari Chirowa neChinyauzvare.
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [And those at Chirowa and Chinyauzvare]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Zvaonekwa Mambo Muponda!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Thank you, King Muponda]
-            </p>
-          </div>
-        </div>
-
-        <!-- Stanza 6 (King Character) -->
-        <div class='space-y-3 pt-4 bg-muted/30 p-4 rounded-lg'>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Zvaitwa Dzimbahwe! Waridzi weHumambo!
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Well done Your Majesty! The Royal Family]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Murambatsvina! Wangopa ngemwoyo wese!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Smart King of great generosity]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Chigumbu chisina unye!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [And for whom forgiveness is a hallmark]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wangochemerwa ngewatanga;
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [First-timers lament for a chance to win you over]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              SaMuponda: Nyere! Mapara!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Great King Muponda of the Serval Cat Clan, acclaimed tanner]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Hekani Waridzi weDoweguru!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Thanks to the revered Ruler Of Doweguru]
-            </p>
-          </div>
-        </div>
-
-        <!-- Stanza 7 (Origins) -->
-        <div
-          class='space-y-3 pt-4 border-l-4 border-muponda-earth pl-4 md:pl-8 py-2'
-        >
-          <h4
-            class='text-xs font-sans font-bold text-muted-foreground uppercase mb-2'
-          >
-            The Origins
-          </h4>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wangotonga Manyika wari kuRwenze!
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Who graciously presides over Manyika from the Lofty Uplands]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wangotondera Matongo wari paMutsamvu weWatsomba
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [For whom Remembrance Ceremonies are done under a big Fig Tree at
-              Watsomba]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Ndo'o pane nhoroondo, asi Dzinde riri Tanganyika!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Where our remarkable history is discussed, starting from our
-              origins in Tanganyika / Ruvuma]
-            </p>
-          </div>
-        </div>
-
-        <!-- Stanza 8 (Regional) -->
-        <div class='space-y-3 pt-4'>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Ewo-o wari Rupinda nekwa Mukandi,
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Welcome rulers at Rupinda and Mukandi]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Wari Nhunhama, Ruwaka neMagoboza.
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Those at Nhunhama, Ruwaka and Magoboza]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Mwaita wari Maringa, Maunga neNyanga,
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Thanks to those in Maringa, Maunga and Nyanga]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Zvaonekwa wari Chidazembe, nekwa Chigodora!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Those at Chidazembe and Chigodora]
-            </p>
-          </div>
-        </div>
-
-        <!-- Stanza 9 (Conclusion) -->
-        <div class='space-y-3 pt-4'>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Makayambuka Nzizi Kasambavezi, Gorongoza neRwenya.
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [You crossed these big Rivers: Zambezi; Gorongoza and Rwenya]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Zvaitwa Nyere! Mwaita Samaringa!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Well done, visionary People of repute]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Waridzi wemasango, Wangoonekwa ngewatanga
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Whose mastery of stealth and camouflage makes you
-              invisible/invincible. And a mystery to many]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Mwaita; wari Sambawarongo
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Thanks those buried near the Queen's Pool]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Zvaonekwa Dzimbahwe: SaMuponda!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [Well done Your Majesty, King Muponda]
-            </p>
-          </div>
-          <div>
-            <p
-              class='text-foreground text-lg md:text-xl font-semibold leading-relaxed'
-            >
-              Nyere yanguyi-iyi, Zvaitwa Mapara!
-            </p><p class='text-gray-500 italic text-sm md:text-base'>
-              [My precious Serval Cat, to this Clan we proudly belong. Thank you
-              Tanners!]
-            </p>
-          </div>
-          <div class='pt-4'>
-            <p
-              class='text-primary text-xl md:text-2xl font-bold leading-relaxed'
-            >
-              Tikafira pano ngeyi?
-            </p><p class='text-muted-foreground italic text-sm md:text-base'>
-              [Is this goodness not the reason why we would rather die here?]
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class='mt-12 text-center border-t border-border pt-8'>
-        <a
-          href='/culture'
-          class='px-8 py-3 bg-primary hover:opacity-90 text-primary-foreground rounded-full transition shadow-md'
-        >
-          <i class='fas fa-arrow-left mr-2'></i> Back to Highlights
-        </a>
       </div>
     </div>
   </div>
 </Layout>
+
+<style>
+  :global(#poem-content.translations-hidden) :global(.poem-translation) {
+    display: none;
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = 'poem-translations-hidden';
+  const button = document.getElementById('toggle-translations');
+  const label = document.getElementById('toggle-label');
+  const content = document.getElementById('poem-content');
+
+  function applyState(hidden: boolean) {
+    content?.classList.toggle('translations-hidden', hidden);
+    if (label) label.textContent = hidden ? 'Show Translations' : 'Hide Translations';
+  }
+
+  applyState(localStorage.getItem(STORAGE_KEY) === 'true');
+
+  button?.addEventListener('click', () => {
+    const hidden = !content?.classList.contains('translations-hidden');
+    localStorage.setItem(STORAGE_KEY, String(hidden));
+    applyState(hidden);
+  });
+</script>
