@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import PageHero from '@/components/shared/PageHero.astro';
 import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
 import FamilyTreeNode from '@/components/shared/FamilyTreeNode.astro';
+import PersonCard from '@/components/shared/PersonCard.astro';
 import { families, getRoots } from '@/data/families';
 
 export function getStaticPaths() {
@@ -44,6 +45,20 @@ const unconfirmedCount = family.members.filter((p) => !p.confirmed).length;
       <ul class='space-y-8'>
         {roots.map((root) => <FamilyTreeNode person={root} members={family.members} />)}
       </ul>
+    </div>
+
+    <div class='flex items-baseline justify-between mt-16 mb-6'>
+      <h2 class='text-2xl font-bold text-foreground'>Family Members</h2>
+      <span class='text-sm text-muted-foreground'>
+        {family.members.length} recorded
+      </span>
+    </div>
+    <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+      {
+        family.members.map((person) => (
+          <PersonCard person={person} members={family.members} />
+        ))
+      }
     </div>
 
     <div class='bg-card border border-border rounded-xl p-8 text-center mt-12'>
