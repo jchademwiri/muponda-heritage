@@ -1,0 +1,76 @@
+---
+import {
+  getSpouses,
+  getChildren,
+  getChildrenOfUnion,
+  type FamilyMember,
+} from '@/data/family-tree';
+
+interface Props {
+  person: FamilyMember;
+}
+
+const { person } = Astro.props;
+const spouses = getSpouses(person.id);
+const directChildren = getChildren(person.id);
+---
+
+<li>
+  <details open class='group'>
+    <summary
+      class='cursor-pointer inline-flex items-center gap-2 py-1 marker:text-muponda-green'
+    >
+      <span class='font-semibold text-foreground'>{person.name}</span>
+      {
+        person.birthYear && (
+          <span class='text-xs text-muted-foreground'>b. {person.birthYear}</span>
+        )
+      }
+      {
+        !person.confirmed && (
+          <span class='text-[10px] uppercase tracking-wide font-bold px-2 py-0.5 rounded-full bg-muponda-gold/20 text-yellow-700'>
+            unconfirmed
+          </span>
+        )
+      }
+    </summary>
+
+    {
+      spouses.length > 0 ? (
+        <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-3'>
+          {spouses.map((spouse) => {
+            const children = getChildrenOfUnion(person.id, spouse.id);
+            return (
+              <li>
+                <div class='text-sm text-muted-foreground flex items-center gap-2'>
+                  <i class='fas fa-heart text-[10px] text-muponda-earth' />
+                  {spouse.name}
+                </div>
+                {children.length > 0 && (
+                  <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-1'>
+                    {children.map((child) => (
+                      <Astro.self person={child} />
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        directChildren.length > 0 && (
+          <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-1'>
+            {directChildren.map((child) => (
+              <Astro.self person={child} />
+            ))}
+          </ul>
+        )
+      )
+    }
+    {
+      person.notes && (
+        <p class='text-xs text-muted-foreground italic pl-2 mt-1'>{person.notes}</p>
+      )
+    }
+  </details>
+</li>
