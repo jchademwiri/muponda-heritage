@@ -16,7 +16,7 @@ const spouses = getSpouses(members, person.id);
 const directChildren = getChildren(members, person.id);
 ---
 
-<li>
+<li id={person.id} class='scroll-mt-24'>
   <details open class='group'>
     <summary
       class='cursor-pointer inline-flex items-center gap-2 py-1 marker:text-muponda-green'
