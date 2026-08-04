@@ -2,39 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import PageHero from '@/components/shared/PageHero.astro';
 import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
-
-const businesses = [
-  {
-    name: 'Apex Web Solutions',
-    owner: 'Jacob Chademwiri',
-    category: 'Web Development',
-    description: '[Details coming soon]',
-  },
-  {
-    name: 'Tender Edge Solutions',
-    owner: 'Jacob Chademwiri',
-    category: 'Tender & Procurement Services',
-    description: '[Details coming soon]',
-  },
-  {
-    name: 'Kariba Fish',
-    owner: 'Sylvester',
-    category: 'Fisheries',
-    description: '[Details coming soon]',
-  },
-  {
-    name: 'Solar Systems',
-    owner: 'Nemaunga',
-    category: 'Solar Energy',
-    description: '[Details coming soon]',
-  },
-  {
-    name: 'Rhino Wood Works',
-    owner: 'Rhino',
-    category: 'Woodwork & Carpentry',
-    description: '[Details coming soon]',
-  },
-];
+import { businesses } from '@/data/directory';
 ---
 
 <Layout
@@ -54,13 +22,18 @@ const businesses = [
     <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
       {
         businesses.map((b) => (
-          <div class='bg-card border border-border rounded-lg p-6'>
+          <a
+            href={`/directory/${b.slug}`}
+            class='group bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col'
+          >
             <div class='flex items-center gap-3 mb-3'>
-              <div class='w-10 h-10 rounded-lg bg-muponda-gold/20 text-yellow-700 flex items-center justify-center'>
+              <div class='w-10 h-10 rounded-lg bg-muponda-gold/20 text-yellow-700 flex items-center justify-center group-hover:bg-muponda-gold group-hover:text-white transition'>
                 <i class='fas fa-store' />
               </div>
               <div>
-                <h3 class='font-bold text-foreground'>{b.name}</h3>
+                <h3 class='font-bold text-foreground group-hover:text-primary transition'>
+                  {b.name}
+                </h3>
                 <p class='text-xs text-muted-foreground'>{b.category}</p>
               </div>
             </div>
@@ -68,7 +41,10 @@ const businesses = [
               Owner: {b.owner}
             </p>
             <p class='text-sm text-muted-foreground'>{b.description}</p>
-          </div>
+            <span class='mt-4 text-sm font-semibold text-primary inline-flex items-center gap-1'>
+              View details <i class='fas fa-arrow-right text-xs' />
+            </span>
+          </a>
         ))
       }
     </div>
