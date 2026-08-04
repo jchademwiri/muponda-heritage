@@ -1,0 +1,60 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+import FamilyTreeNode from '@/components/shared/FamilyTreeNode.astro';
+import { families, getRoots } from '@/data/families';
+
+export function getStaticPaths() {
+  return families.map((family) => ({
+    params: { slug: family.slug },
+    props: { family },
+  }));
+}
+
+const { family } = Astro.props;
+const roots = getRoots(family.members);
+const unconfirmedCount = family.members.filter((p) => !p.confirmed).length;
+---
+
+<Layout
+  title={`${family.name} Family Tree`}
+  description={`Explore the ${family.name} family genealogy — part of the Muponda clan (totem: Nyere).`}
+>
+  <PageHero
+    eyebrow='Muponda Clan — Totem Nyere'
+    title={`${family.name} Family Tree`}
+    subtitle={family.description}
+    bgClass='bg-muponda-green'
+  />
+
+  <div class='max-w-5xl mx-auto px-6 py-16'>
+    <a
+      href='/family-tree'
+      class='inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition mb-8'
+    >
+      <i class='fas fa-arrow-left' /> All Muponda Families
+    </a>
+
+    <PlaceholderNotice
+      text={`This tree is built from data supplied so far. Entries tagged "unconfirmed" (${unconfirmedCount} total) still need verification. Click any name to collapse/expand that branch.`}
+    />
+
+    <div class='bg-card border border-border rounded-xl p-6 md:p-10'>
+      <ul class='space-y-8'>
+        {roots.map((root) => <FamilyTreeNode person={root} members={family.members} />)}
+      </ul>
+    </div>
+
+    <div class='bg-card border border-border rounded-xl p-8 text-center mt-12'>
+      <i class='fas fa-sitemap text-4xl text-muponda-green mb-4'></i>
+      <h2 class='text-xl font-bold text-foreground mb-2'>
+        Searchable, Zoomable Tree — Coming Soon
+      </h2>
+      <p class='text-muted-foreground max-w-xl mx-auto'>
+        This collapsible list is the first pass. A future version will add
+        search, individual profile pages, and a zoomable chart view.
+      </p>
+    </div>
+  </div>
+</Layout>

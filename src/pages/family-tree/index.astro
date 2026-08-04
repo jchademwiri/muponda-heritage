@@ -1,0 +1,51 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+import { families } from '@/data/families';
+---
+
+<Layout
+  title='Family Tree'
+  description='The Muponda clan (totem: Nyere) and the surname lines descending from it, including Chademwiri.'
+>
+  <PageHero
+    eyebrow='Rudzi RweMuponda'
+    title='Family Tree'
+    subtitle='Muponda is our clan and totem (Nyere) — the shared identity behind more than ten surname lines. Explore each family below.'
+    bgClass='bg-muponda-green'
+  />
+
+  <div class='max-w-5xl mx-auto px-6 py-16'>
+    <PlaceholderNotice
+      text='Muponda is not one traceable genealogical trunk — it is a clan/totem affiliation (Nyere) shared across many surnames. Each family below has its own tree; more will be added as records come in.'
+    />
+
+    <div class='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+      {
+        families.map((family) => (
+          <a
+            href={`/family-tree/${family.slug}`}
+            class='group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition duration-300'
+          >
+            <div class='w-12 h-12 rounded-lg bg-muponda-green/10 text-muponda-green flex items-center justify-center mb-4 text-xl group-hover:bg-muponda-green group-hover:text-white transition'>
+              <i class='fas fa-sitemap' />
+            </div>
+            <h2 class='text-xl font-bold text-foreground mb-2'>
+              {family.name}
+            </h2>
+            <p class='text-sm text-muted-foreground'>{family.description}</p>
+          </a>
+        ))
+      }
+
+      <div class='bg-muted/50 border border-dashed border-border rounded-xl p-6 flex flex-col items-center justify-center text-center'>
+        <i class='fas fa-plus text-2xl text-muted-foreground/50 mb-3' />
+        <p class='text-sm text-muted-foreground'>
+          More Muponda surname lines will appear here as family records are
+          added.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

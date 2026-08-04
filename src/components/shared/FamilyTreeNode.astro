@@ -4,15 +4,16 @@ import {
   getChildren,
   getChildrenOfUnion,
   type FamilyMember,
-} from '@/data/family-tree';
+} from '@/data/families';
 
 interface Props {
   person: FamilyMember;
+  members: FamilyMember[];
 }
 
-const { person } = Astro.props;
-const spouses = getSpouses(person.id);
-const directChildren = getChildren(person.id);
+const { person, members } = Astro.props;
+const spouses = getSpouses(members, person.id);
+const directChildren = getChildren(members, person.id);
 ---
 
 <li>
@@ -39,7 +40,7 @@ const directChildren = getChildren(person.id);
       spouses.length > 0 ? (
         <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-3'>
           {spouses.map((spouse) => {
-            const children = getChildrenOfUnion(person.id, spouse.id);
+            const children = getChildrenOfUnion(members, person.id, spouse.id);
             return (
               <li>
                 <div class='text-sm text-muted-foreground flex items-center gap-2'>
@@ -49,7 +50,7 @@ const directChildren = getChildren(person.id);
                 {children.length > 0 && (
                   <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-1'>
                     {children.map((child) => (
-                      <Astro.self person={child} />
+                      <Astro.self person={child} members={members} />
                     ))}
                   </ul>
                 )}
@@ -61,7 +62,7 @@ const directChildren = getChildren(person.id);
         directChildren.length > 0 && (
           <ul class='pl-5 border-l border-border ml-2 mt-1 space-y-1'>
             {directChildren.map((child) => (
-              <Astro.self person={child} />
+              <Astro.self person={child} members={members} />
             ))}
           </ul>
         )

@@ -1,41 +1,13 @@
-// Chademwiri family tree data.
-//
-// Model: every person is a flat record. A child links to their
-// `fatherId` and `motherId` directly (rather than a generic parentIds
-// list) because this family is polygamous — the father is shared across
-// several unions, but each union has one mother, and that mother/father
-// pair is what actually groups full siblings together.
-//
-// `confirmed: false` marks entries that came from an earlier, less
-// reliable source and haven't been verified against the family — see
-// the `notes` field on those entries for what's uncertain.
+import type { FamilyMember } from './types';
 
-export interface FamilyMember {
-  id: string;
-  name: string;
-  birthYear?: number;
-  gender?: 'M' | 'F';
-  /** Father's id, if known. */
-  fatherId?: string;
-  /** Mother's id, if known. */
-  motherId?: string;
-  /** Ids of this person's spouse(s). */
-  spouseIds?: string[];
-  /** 0 = root generation (Isaac / David Chademuwiri). */
-  generation: number;
-  confirmed: boolean;
-  notes?: string;
-}
-
-export const familyMembers: FamilyMember[] = [
+export const chademwiriMembers: FamilyMember[] = [
   // --- Generation 0: Root ---
   {
     id: 'isaac',
     name: 'Isaac',
     generation: 0,
     confirmed: true,
-    notes:
-      'Brother of David Chademuwiri. Descendants ("Edward Family" branch) not yet confirmed — see CONTENT-NEEDED.md.',
+    notes: 'Brother of David Chademuwiri.',
   },
   {
     id: 'david-chademuwiri',
@@ -44,6 +16,14 @@ export const familyMembers: FamilyMember[] = [
     confirmed: true,
     notes: 'Brother of Isaac.',
   },
+
+  // --- Generation 1: Children of Isaac ---
+  { id: 'juliet', name: 'Juliet', fatherId: 'isaac', generation: 1, confirmed: true, notes: 'Associated note from source records: "Mai Muchona".' },
+  { id: 'caleb', name: 'Caleb', fatherId: 'isaac', generation: 1, confirmed: true, notes: 'Associated note from source records: "Makwasa Team".' },
+  { id: 'edward', name: 'Edward', fatherId: 'isaac', generation: 1, confirmed: true, notes: 'Associated note from source records: "Masere — father of Langton".' },
+  { id: 'abisha', name: 'Abisha', fatherId: 'isaac', generation: 1, confirmed: true, notes: 'Associated note from source records: "Green Team".' },
+  { id: 'joel', name: 'Joel', fatherId: 'isaac', generation: 1, confirmed: true, notes: 'Associated note from source records: "Green Team".' },
+  { id: 'ambrose', name: 'Ambrose', fatherId: 'isaac', generation: 1, confirmed: true, notes: 'Associated note from source records: "Makwasa Team".' },
 
   // --- Generation 1: Children of David Chademuwiri, and their wives ---
   { id: 'jonathan', name: 'Jonathan', fatherId: 'david-chademuwiri', generation: 1, confirmed: true, spouseIds: ['mai-israel', 'mai-rose', 'mai-nomia'] },
@@ -56,7 +36,7 @@ export const familyMembers: FamilyMember[] = [
 
   // George's wives
   { id: 'mai-tabitha', name: 'Mai Tabitha', generation: 1, confirmed: true, spouseIds: ['george'], notes: 'Named for firstborn, Tabitha.' },
-  { id: 'mai-emma', name: 'Mai Emma', generation: 1, confirmed: true, spouseIds: ['george'], notes: 'Named for firstborn, Emah/Emma.' },
+  { id: 'mai-emma', name: 'Mai Emma', generation: 1, confirmed: true, spouseIds: ['george'], notes: 'Named for firstborn, Emma.' },
   { id: 'mai-elisha', name: 'Mai Elisha', generation: 1, confirmed: true, spouseIds: ['george'], notes: 'Named for firstborn, Elisha.' },
   { id: 'mai-rhino', name: 'Mai Rhino (Christine Nyabadza)', generation: 1, confirmed: true, spouseIds: ['george'], notes: 'Named for firstborn, Rhino. Fully confirmed line, down to great-grandchildren.' },
   { id: 'mai-tambudzai', name: 'Mai Tambudzai', generation: 1, confirmed: true, spouseIds: ['george'], notes: 'Named for firstborn, Tambudzai.' },
@@ -80,17 +60,13 @@ export const familyMembers: FamilyMember[] = [
   { id: 'tabitha', name: 'Tabitha', fatherId: 'george', motherId: 'mai-tabitha', generation: 2, confirmed: true },
   { id: 'lucia', name: 'Lucia', fatherId: 'george', motherId: 'mai-tabitha', generation: 2, confirmed: true },
 
+  { id: 'emma', name: 'Emma', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'emah', name: 'Emah', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'jairos', name: 'Jairos', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'naison', name: 'Naison', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'aaron', name: 'Aaron', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
-  { id: 'peter', name: 'Peter', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: false, notes: 'From an earlier list under Mai Emma — needs confirming.' },
-  { id: 'judah', name: 'Judah', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: false, notes: 'From an earlier list under Mai Emma — needs confirming.' },
-  { id: 'jeremiah', name: 'Jeremiah', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: false, notes: 'From an earlier list under Mai Emma — needs confirming.' },
-  { id: 'prisca', name: 'Prisca', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: false, notes: 'From an earlier list under Mai Emma — needs confirming.' },
-  { id: 'amon', name: 'Amon', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: false, notes: 'From an earlier list under Mai Emma — needs confirming.' },
 
-  { id: 'elisha-1971', name: "Elisha", birthYear: 1971, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
+  { id: 'elisha-1971', name: 'Elisha', birthYear: 1971, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
   { id: 'grace-1974', name: 'Grace', birthYear: 1974, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
   { id: 'noah-1975', name: 'Noah', birthYear: 1975, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
   { id: 'miriam-1978', name: 'Miriam', birthYear: 1978, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
@@ -128,7 +104,7 @@ export const familyMembers: FamilyMember[] = [
   { id: 'johane', name: 'Johane', fatherId: 'rhino-1976', motherId: 'mai-tadiwa', generation: 3, confirmed: true },
   { id: 'tanaka', name: 'Tanaka', fatherId: 'rhino-1976', motherId: 'mai-tadiwa', generation: 3, confirmed: true },
   { id: 'tanyaradzwa', name: 'Tanyaradzwa', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true },
-  { id: 'rhino-ii', name: 'Rhino', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true, notes: 'Named after his grandfather, Rhino \'76.' },
+  { id: 'rhino-ii', name: 'Rhino', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true, notes: "Named after his grandfather, Rhino '76." },
   { id: 'rhyn', name: 'Rhyn', fatherId: 'rhino-1976', motherId: 'mai-tanyaradzwa', generation: 3, confirmed: true },
 
   // --- Generation 3: Children of Sylvester '78 ---
@@ -154,35 +130,3 @@ export const familyMembers: FamilyMember[] = [
   { id: 'jewel', name: 'Jewel', fatherId: 'jacob-1991', motherId: 'youlanda', generation: 3, confirmed: true },
   { id: 'janaiah', name: 'Janaiah', fatherId: 'jacob-1991', motherId: 'youlanda', generation: 3, confirmed: true },
 ];
-
-export function getPerson(id: string): FamilyMember | undefined {
-  return familyMembers.find((p) => p.id === id);
-}
-
-export function getSpouses(id: string): FamilyMember[] {
-  const person = getPerson(id);
-  if (!person?.spouseIds) return [];
-  return person.spouseIds
-    .map((spouseId) => getPerson(spouseId))
-    .filter((p): p is FamilyMember => Boolean(p));
-}
-
-export function getChildren(id: string): FamilyMember[] {
-  return familyMembers.filter((p) => p.fatherId === id || p.motherId === id);
-}
-
-/** Children of a specific couple only (used to group children under the right mother/wife). */
-export function getChildrenOfUnion(
-  parentId: string,
-  spouseId: string
-): FamilyMember[] {
-  return familyMembers.filter(
-    (p) =>
-      (p.fatherId === parentId && p.motherId === spouseId) ||
-      (p.motherId === parentId && p.fatherId === spouseId)
-  );
-}
-
-export function getRoots(): FamilyMember[] {
-  return familyMembers.filter((p) => !p.fatherId && !p.motherId && p.generation === 0);
-}

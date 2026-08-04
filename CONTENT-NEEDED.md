@@ -53,14 +53,37 @@ For each elder/king/leader you want featured:
 
 ## Group 5 — Family Tree Data (`/family-tree`)
 
-This will need the most structured data. Ideally as a spreadsheet with columns:
+**Structure confirmed:** Muponda is the clan/totem (Nyere), not one traceable
+genealogical trunk — it's the shared identity across 10+ surname lines.
+Each surname gets its own family tree at `/family-tree/[slug]`, registered
+in `src/data/families/index.ts`. Data lives in
+`src/data/families/<surname>.ts` as a flat `FamilyMember[]` (see
+`src/data/families/types.ts` for the shape).
 
-```
-ID | First_Name | Last_Name | Parent_ID | Spouse_ID | DOB | Totem | Village/Location | Bio | Photo_Url
-```
+**Chademwiri — done, built into the site:**
+- [x] Isaac & David Chademuwiri as root (brothers)
+- [x] Isaac's children: Juliet, Caleb, Edward, Abisha, Joel, Ambrose
+- [x] Jonathan's branch (3 wives) and George's branch (5 wives), including
+      the fully-confirmed Mai Rhino line down to great-grandchildren
+- [x] Mai Emma question resolved — added "Emma" as an additional child
+      (kept alongside "Emah"; flag if these are actually the same person
+      with two spellings, and I'll merge them)
 
-- [ ] At least 3 generations of names and relationships
-- [ ] Confirm the family tree should eventually be an interactive/searchable tool (vs. a static chart)
+**Still open for Chademwiri:**
+- [ ] Isaac's grandchildren — the earlier list (Esther, Stephen, Langton,
+      Nhamo) and the notes attached to his children ("Mai Muchona",
+      "Makwasa Team", "Green Team", "Masere — father of Langton") still
+      need to be placed correctly in the tree
+- [ ] Birth years / dates for anyone not already dated
+- [ ] Photos
+
+**For every other Muponda surname line (10+ to go):**
+- [ ] Surname name
+- [ ] Root ancestor(s)
+- [ ] Generations and relationships, in the same format as Chademwiri (a
+      spreadsheet with ID / First_Name / Parent_ID / Mother_ID / Spouse_ID /
+      DOB works well, or plain family-tree screenshots like the ones
+      already used)
 
 ---
 
