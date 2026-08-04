@@ -5,16 +5,34 @@ import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
 
 const businesses = [
   {
-    name: '[Business Name]',
-    owner: '[Family Member Name]',
-    category: '[Category]',
-    description: '[Placeholder] What this business does and how to reach it.',
+    name: 'Apex Web Solutions',
+    owner: 'Jacob Chademwiri',
+    category: 'Web Development',
+    description: '[Details coming soon]',
   },
   {
-    name: '[Business Name]',
-    owner: '[Family Member Name]',
-    category: '[Category]',
-    description: '[Placeholder] What this business does and how to reach it.',
+    name: 'Tender Edge Solutions',
+    owner: 'Jacob Chademwiri',
+    category: 'Tender & Procurement Services',
+    description: '[Details coming soon]',
+  },
+  {
+    name: 'Kariba Fish',
+    owner: 'Sylvester',
+    category: 'Fisheries',
+    description: '[Details coming soon]',
+  },
+  {
+    name: 'Solar Systems',
+    owner: 'Nemaunga',
+    category: 'Solar Energy',
+    description: '[Details coming soon]',
+  },
+  {
+    name: 'Rhino Wood Works',
+    owner: 'Rhino',
+    category: 'Woodwork & Carpentry',
+    description: '[Details coming soon]',
   },
 ];
 ---
@@ -31,9 +49,9 @@ const businesses = [
   />
 
   <div class='max-w-5xl mx-auto px-6 py-16'>
-    <PlaceholderNotice text='Listings will require an approval workflow once accounts exist. For now, placeholder entries show the intended layout.' />
+    <PlaceholderNotice text='Businesses and owners are confirmed. Category, description and contact details for each are still needed — see CONTENT-NEEDED.md. A submission/approval workflow will come with the member portal.' />
 
-    <div class='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12'>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
       {
         businesses.map((b) => (
           <div class='bg-card border border-border rounded-lg p-6'>
