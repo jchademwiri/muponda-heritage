@@ -65,9 +65,12 @@ in `src/data/families/index.ts`. Data lives in
 - [x] Isaac's children: Juliet, Caleb, Edward, Abisha, Joel, Ambrose
 - [x] Jonathan's branch (3 wives) and George's branch (5 wives), including
       the fully-confirmed Mai Rhino line down to great-grandchildren
-- [x] Mai Emma question resolved — added "Emma" as an additional child
-      (kept alongside "Emah"; flag if these are actually the same person
-      with two spellings, and I'll merge them)
+- [x] Mai Emma's full children list confirmed: Emma, Emah, Jairos, Naison,
+      Aaron, George (named after his father), Nelson, Peter, Judah,
+      Jeremiah, Prisca, Amon (still flagging "Emma"/"Emah" as possibly the
+      same person with two spellings — merge if so)
+- [x] Nelson's children (with Mai Talent): Talent, George
+- [x] Mai Fatima's second child, Mukundi, added under Sylvester '78
 
 **Still open for Chademwiri:**
 - [ ] Isaac's grandchildren — the earlier list (Esther, Stephen, Langton,

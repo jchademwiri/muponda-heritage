@@ -66,6 +66,16 @@ export const chademwiriMembers: FamilyMember[] = [
   { id: 'naison', name: 'Naison', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'aaron', name: 'Aaron', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
   { id: 'george-mai-emma', name: 'George', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true, notes: 'Named after his father, George.' },
+  { id: 'nelson', name: 'Nelson', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true, spouseIds: ['mai-talent'] },
+  { id: 'peter', name: 'Peter', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
+  { id: 'judah', name: 'Judah', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
+  { id: 'jeremiah', name: 'Jeremiah', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
+  { id: 'prisca', name: 'Prisca', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
+  { id: 'amon', name: 'Amon', fatherId: 'george', motherId: 'mai-emma', generation: 2, confirmed: true },
+
+  { id: 'mai-talent', name: 'Mai Talent', generation: 2, confirmed: true, spouseIds: ['nelson'], notes: 'Named for firstborn, Talent.' },
+  { id: 'talent', name: 'Talent', fatherId: 'nelson', motherId: 'mai-talent', generation: 3, confirmed: true },
+  { id: 'george-nelson', name: 'George', fatherId: 'nelson', motherId: 'mai-talent', generation: 3, confirmed: true },
 
   { id: 'elisha-1971', name: 'Elisha', birthYear: 1971, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
   { id: 'grace-1974', name: 'Grace', birthYear: 1974, fatherId: 'george', motherId: 'mai-elisha', generation: 2, confirmed: true },
@@ -112,6 +122,7 @@ export const chademwiriMembers: FamilyMember[] = [
   { id: 'sylvester-ii', name: 'Sylvester', fatherId: 'sylvester-1978', motherId: 'mai-sylvester', generation: 3, confirmed: true, notes: "Named after his father, Sylvester '78." },
   { id: 'shown', name: 'Shown', fatherId: 'sylvester-1978', motherId: 'mai-sylvester', generation: 3, confirmed: true },
   { id: 'fatima', name: 'Fatima', fatherId: 'sylvester-1978', motherId: 'mai-fatima', generation: 3, confirmed: true },
+  { id: 'mukundi', name: 'Mukundi', fatherId: 'sylvester-1978', motherId: 'mai-fatima', generation: 3, confirmed: true },
 
   // --- Generation 3: Children of Settie '85 ---
   { id: 'tanatswa', name: 'Tanatswa', fatherId: 'settie-1985', motherId: 'mai-tanatswa', generation: 3, confirmed: true },
