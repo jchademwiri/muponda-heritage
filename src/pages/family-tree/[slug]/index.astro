@@ -1,0 +1,76 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
+import { families, getRoots, getChildren } from '@/data/families';
+
+export function getStaticPaths() {
+  return families.map((family) => ({
+    params: { slug: family.slug },
+    props: { family },
+  }));
+}
+
+const { family } = Astro.props;
+const roots = getRoots(family.members);
+const unconfirmedCount = family.members.filter((p) => !p.confirmed).length;
+---
+
+<Layout
+  title={`${family.name} Family Tree`}
+  description={`Explore the ${family.name} family genealogy — part of the Muponda clan (totem: Nyere).`}
+>
+  <PageHero
+    eyebrow='Muponda Clan — Totem Nyere'
+    title={`${family.name} Family Tree`}
+    subtitle={family.description}
+    bgClass='bg-muponda-green'
+  />
+
+  <div class='max-w-5xl mx-auto px-6 py-16'>
+    <a
+      href='/family-tree'
+      class='inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition mb-8'
+    >
+      <i class='fas fa-arrow-left' /> All Muponda Families
+    </a>
+
+    <PlaceholderNotice
+      text={`${family.members.length} people recorded so far. Entries tagged "unconfirmed" (${unconfirmedCount} total) still need verification. Pick an ancestor below to open their branch.`}
+    />
+
+    <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+      {
+        roots.map((root) => {
+          const childCount = getChildren(family.members, root.id).length;
+          return (
+            <a
+              href={`/family-tree/${family.slug}/${root.id}`}
+              class='group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col'
+            >
+              <div class='w-12 h-12 rounded-lg bg-muponda-green/10 text-muponda-green flex items-center justify-center mb-4 text-xl group-hover:bg-muponda-green group-hover:text-white transition'>
+                <i class='fas fa-user' />
+              </div>
+              <h3 class='text-lg font-bold text-foreground mb-1'>
+                {root.name}
+              </h3>
+              {childCount > 0 && (
+                <p class='text-sm text-muted-foreground'>
+                  {childCount} child{childCount === 1 ? '' : 'ren'}
+                </p>
+              )}
+              {root.notes && (
+                <p class='text-xs text-muted-foreground italic mt-3 pt-3 border-t border-border'>
+                  {root.notes}
+                </p>
+              )}
+              <span class='mt-4 text-sm font-semibold text-primary inline-flex items-center gap-1'>
+                View branch <i class='fas fa-arrow-right text-xs' />
+              </span>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>
