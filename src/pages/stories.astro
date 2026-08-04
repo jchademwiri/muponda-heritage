@@ -5,16 +5,28 @@ import PlaceholderNotice from '@/components/shared/PlaceholderNotice.astro';
 
 const stories = [
   {
-    title: '[Story Title]',
-    author: '[Told by / Written by]',
+    title: '[How We Crossed the Rivers]',
+    author: '[Told by — Elder Name]',
     excerpt:
-      '[Placeholder] A short excerpt of an oral history, memory or family story passed down through generations.',
+      '[Placeholder] A retelling of the migration south, crossing the Kasambavezi, Gorongoza and Rwenya rivers, as passed down through generations.',
   },
   {
-    title: '[Story Title]',
-    author: '[Told by / Written by]',
+    title: '[The Fig Tree at Watsomba]',
+    author: '[Told by — Elder Name]',
     excerpt:
-      '[Placeholder] A short excerpt of an oral history, memory or family story passed down through generations.',
+      '[Placeholder] A memory of remembrance ceremonies held under the great Fig Tree, and what it means to the family today.',
+  },
+  {
+    title: '[Climbing Mt. Ruunji]',
+    author: '[Told by — Elder Name]',
+    excerpt:
+      '[Placeholder] A firsthand account of visiting the sacred Mountain of Mist and the tradition of scaling it with respect.',
+  },
+  {
+    title: '[The Tanners of Old]',
+    author: '[Told by — Elder Name]',
+    excerpt:
+      '[Placeholder] A story about the family’s tanning craft (Mapara), referenced in the praise poem, and how it shaped our identity.',
   },
 ];
 ---
@@ -33,10 +45,10 @@ const stories = [
   <div class='max-w-4xl mx-auto px-6 py-16'>
     <PlaceholderNotice text='Share real oral histories, memories or written stories to replace these placeholders.' />
 
-    <div class='space-y-8'>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
       {
         stories.map((story) => (
-          <div class='bg-card border border-border rounded-lg p-8 border-l-4 border-l-muponda-earth'>
+          <div class='bg-card border border-border rounded-lg p-8 border-l-4 border-l-muponda-earth hover:shadow-lg transition duration-300'>
             <h3 class='text-xl font-bold text-foreground mb-1'>
               {story.title}
             </h3>
