@@ -45,7 +45,11 @@ const sidebarItems = businesses.map((b) => ({
       <DetailSidebar heading='All Businesses' items={sidebarItems} />
 
       <div>
-        <PlaceholderNotice text='Full details for this business are still to come — see CONTENT-NEEDED.md.' />
+        {
+          !business.phone && !business.email && (
+            <PlaceholderNotice text='Full details for this business are still to come — see CONTENT-NEEDED.md.' />
+          )
+        }
 
         <div class='bg-card border border-border rounded-xl p-6 md:p-10'>
           <div class='flex items-center gap-4 mb-8'>
@@ -73,6 +77,34 @@ const sidebarItems = businesses.map((b) => ({
           <p class='text-muted-foreground leading-relaxed mb-6'>
             {business.description}
           </p>
+
+          {
+            (business.phone || business.email || business.location) && (
+              <div class='flex flex-wrap gap-4 mb-6 text-sm'>
+                {business.phone && (
+                  <a
+                    href={`tel:${business.phone.replace(/\s+/g, '')}`}
+                    class='inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition'
+                  >
+                    <i class='fas fa-phone' /> {business.phone}
+                  </a>
+                )}
+                {business.email && (
+                  <a
+                    href={`mailto:${business.email}`}
+                    class='inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition'
+                  >
+                    <i class='fas fa-envelope' /> {business.email}
+                  </a>
+                )}
+                {business.location && (
+                  <span class='inline-flex items-center gap-2 text-muted-foreground'>
+                    <i class='fas fa-location-dot' /> {business.location}
+                  </span>
+                )}
+              </div>
+            )
+          }
 
           <div class='border-t border-border pt-6'>
             <h2 class='text-lg font-bold text-foreground mb-3'>Details</h2>
